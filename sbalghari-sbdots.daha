@@ -1,0 +1,331 @@
+# Drafted by `daha-cli import` from https://github.com/sbalghari/sbdots.git at 20b6eaaaa579ef60f8bc3de9bbab193b2a0c1d01.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 3 binds settings, 2 cursor settings, 1 dwindle settings, 10 general settings, 7 input settings, 2 master settings, 1 misc settings, 17 hl.animation calls, 33 hl.bind calls, 6 hl.curve calls, 15 hl.env calls, 1 hl.gesture calls, 1 hl.monitor calls, 1 hl.on calls, 4 hl.window_rule calls (not theme, or animations, which aren't taken from Lua yet)
+#   left out: hyprland: 8 parts of its Lua need running to read (hyprland/decoration:1: require("colors"): not in the repository, ...)
+#   left out: kitty: 24 other settings
+#   left out: btop: its theme matugen.theme isn't in their repository (btop's own themes aren't packed)
+#   left out: swaync: its style @imports other files, which won't be next to it: review it
+#   left out: wlogout: its style @imports other files, which won't be next to it: review it
+#   left out: gtk3: its style @imports other files, which won't be next to it: review it
+#   left out: gtk4: its style @imports other files, which won't be next to it: review it
+#   left out: cava: found dotfiles/configs/cava/config, but the importer doesn't read cava yet
+#   left out: fastfetch: found dotfiles/configs/fastfetch/config.jsonc, but the importer doesn't read fastfetch yet
+#   left out: hyprlock: found dotfiles/configs/hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+#   left out: qt5ct: found dotfiles/configs/qt5ct/qt5ct.conf, but the importer doesn't read qt5ct yet
+#   left out: qt6ct: found dotfiles/configs/qt6ct/qt6ct.conf, but the importer doesn't read qt6ct yet
+
+daha = 1
+
+[pack]
+authors = [ "sbalghari" ]
+description = "Taken from sbalghari/sbdots at 20b6eaaaa579, referenced there and not copied: only what themes an app.\n\n- hyprland: dotfiles/configs/hypr/hyprland.lua and 9 module(s) it requires: 27 settings (read from its Lua, not run)\n- kitty: dotfiles/configs/kitty/kitty.conf: 14 settings\n- swaync: dotfiles/configs/swaync/style.css (the whole style)\n- wlogout: dotfiles/configs/wlogout/style.css (the whole style)\n- gtk3: dotfiles/configs/gtk-3.0/gtk.css (the whole style)\n- gtk4: dotfiles/configs/gtk-4.0/gtk.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.sbalghari-sbdots"
+license = "GPL-3.0"
+name = "sbdots"
+summary = "sbalghari's rice: its look for hyprland, kitty, swaync, wlogout, gtk3 and gtk4"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "20b6eaaaa579ef60f8bc3de9bbab193b2a0c1d01"
+ref = "main"
+repo = "https://github.com/sbalghari/sbdots.git"
+
+[requires]
+fonts = [ "JetBrainsMono Nerd Font" ]
+
+[[apps.gtk3.ops]]
+fragment = "gtk"
+priority = 70
+target = "style"
+
+[[apps.gtk4.ops]]
+fragment = "gtk-2"
+priority = 70
+target = "style"
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 10
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "active_opacity" ]
+priority = 50
+set = "0.90"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "inactive_opacity" ]
+priority = 50
+set = "0.82"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "fullscreen_opacity" ]
+priority = 50
+set = "0.94"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_inactive" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "new_optimizations" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 4
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 2
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "noise" ]
+priority = 50
+set = "0.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "contrast" ]
+priority = 50
+set = "0.8"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "brightness" ]
+priority = 50
+set = "0.8"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "vibrancy" ]
+priority = 50
+set = "0.1"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "vibrancy_darkness" ]
+priority = 50
+set = "0.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "popups" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "special" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "range" ]
+priority = 50
+set = 4
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "render_power" ]
+priority = 50
+set = 2
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "scale" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 5
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 8
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_workspaces" ]
+priority = 60
+set = 0
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 1
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "JetBrainsMono Nerd Font"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_font"
+priority = 60
+set = "JetBrainsMono NF Bold"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "italic_font"
+priority = 60
+set = "JetBrainsMono NF Italic"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_italic_font"
+priority = 60
+set = "JetBrainsMono NF Medium Italic"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = 11
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_margin_width"
+priority = 50
+set = 0
+
+[[apps.kitty.ops]]
+group = "window"
+key = "single_window_margin_width"
+priority = 50
+set = -1
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_padding_width"
+priority = 50
+set = 6
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_edge"
+priority = 40
+set = "bottom"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_style"
+priority = 40
+set = "powerline"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_align"
+priority = 40
+set = "left"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_powerline_style"
+priority = 40
+set = "slanted"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "active_tab_font_style"
+priority = 40
+set = "bold-italic"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "inactive_tab_font_style"
+priority = 40
+set = "normal"
+
+[[apps.swaync.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[[apps.wlogout.ops]]
+fragment = "style-2"
+priority = 70
+target = "style"
+
+[assets.gtk]
+digest = "sha256:df2350ccb3dafcae4d98b83122b77e932696ee7237aaf5c73fbd1d663b05ffac"
+kind = "fragment"
+path = "dotfiles/configs/gtk-3.0/gtk.css"
+size = 22
+
+[assets.gtk-2]
+digest = "sha256:39f53137010efbba8ccbbba7a5f9a744291bbb70f51fd743797d82dcceef62b7"
+kind = "fragment"
+path = "dotfiles/configs/gtk-4.0/gtk.css"
+size = 21
+
+[assets.style]
+digest = "sha256:ba6fcfa15c79ce8c0a7fc1aabb4e6a52f9366c3a646e8b13605e3a1de39126c4"
+kind = "fragment"
+path = "dotfiles/configs/swaync/style.css"
+size = 5471
+
+[assets.style-2]
+digest = "sha256:23d25d4ba4ef678b9f8f833109e1288386dbde27b675a13b30abc258f0139299"
+kind = "fragment"
+path = "dotfiles/configs/wlogout/style.css"
+size = 1586

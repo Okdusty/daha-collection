@@ -1,0 +1,541 @@
+# Drafted by `daha-cli import` from https://github.com/parvizsudo/Aozora.git at 49056b8ec8bb719f954c6f58a6ee953b6f19d309.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 2 binds settings, 4 cursor settings, 4 dwindle settings, 3 general settings, 15 input settings, 3 master settings, 12 misc settings, 5 scrolling settings, 1 xwayland settings, 14 hl.animation calls, 38 hl.bind calls, 7 hl.curve calls, 1 hl.device calls, 13 hl.env calls, 5 hl.gesture calls, 74 hl.layer_rule calls, 1 hl.monitor calls, 1 hl.on calls, 58 hl.window_rule calls, 1 hl.workspace_rule calls (not theme, or animations, which aren't taken from Lua yet)
+#   left out: hyprland: 1 parts of its Lua need running to read (modules.binds:43: a for block isn't read (it would need running))
+#   left out: kitty: 92 keyboard shortcuts, 5 mouse bindings, 44 other settings
+#   left out: waybar: its config (modules, layout) isn't imported: that's a desktop, not a theme
+#   left out: fastfetch: found config/fastfetch/config.jsonc, but the importer doesn't read fastfetch yet
+#   left out: hyprlock: found config/hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+
+daha = 1
+
+[pack]
+authors = [ "parvizsudo" ]
+description = "Taken from parvizsudo/Aozora at 49056b8ec8bb, referenced there and not copied: only what themes an app.\n\n- hyprland: config/hypr/hyprland.lua and 11 module(s) it requires: 25 settings (read from its Lua, not run)\n- kitty: config/kitty/kitty.conf and 1 included file(s): 47 settings\n- waybar: config/waybar/style.css (the whole style)\n- cava: config/cava/config: 4 settings\n- swaync: config/swaync/style.css (the whole style)\n- wlogout: config/wlogout/style.css (the whole style)\n- wofi: config/wofi/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.parvizsudo-aozora"
+license = "MIT"
+name = "Aozora"
+preview = [ "wm" ]
+summary = "parvizsudo's rice: its look for hyprland, kitty, waybar, cava, swaync, wlogout and wofi"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "49056b8ec8bb719f954c6f58a6ee953b6f19d309"
+ref = "main"
+repo = "https://github.com/parvizsudo/Aozora.git"
+
+[requires]
+fonts = [ "CaskaydiaMono Nerd Font" ]
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient" ]
+priority = 80
+set = 1
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_count" ]
+priority = 80
+set = 2
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_1" ]
+priority = 80
+set = "'#33dddd'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_2" ]
+priority = 80
+set = "'#cc33cc'"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 5
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col", "active_border" ]
+priority = 80
+set = "0xff7aa2f7"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col", "inactive_border" ]
+priority = 80
+set = "0xff565f89"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 13
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding_power" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "active_opacity" ]
+priority = 50
+set = "0.95"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "inactive_opacity" ]
+priority = 50
+set = "0.85"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "range" ]
+priority = 50
+set = 30
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "render_power" ]
+priority = 50
+set = 4
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 7
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 3
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "vibrancy" ]
+priority = 50
+set = "0.2"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "new_optimizations" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "ignore_opacity" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_inactive" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_strength" ]
+priority = 50
+set = "0.12"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_special" ]
+priority = 50
+set = "0.2"
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_splash_rendering" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = 0
+
+[[apps.kitty.ops]]
+group = "window"
+key = "cursor_shape"
+priority = 50
+set = "beam"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "hide_window_decorations"
+priority = 50
+set = "no"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_border_color"
+priority = 80
+set = "#3d59a1"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_border_color"
+priority = 80
+set = "#101014"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "bell_border_color"
+priority = 80
+set = "#e0af68"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_margin_width"
+priority = 50
+set = 5
+
+[[apps.kitty.ops]]
+group = "window"
+key = "single_window_margin_width"
+priority = 50
+set = 0
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_padding_width"
+priority = 50
+set = 8
+
+[[apps.kitty.ops]]
+group = "window"
+key = "background_opacity"
+priority = 50
+set = "0.93"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "CaskaydiaMono Nerd Font"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "italic_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_italic_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = "11.0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "foreground"
+priority = 80
+set = "#a9b1d6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "background"
+priority = 80
+set = "#1a1b26"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color0"
+priority = 80
+set = "#414868"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color8"
+priority = 80
+set = "#414868"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color1"
+priority = 80
+set = "#f7768e"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color9"
+priority = 80
+set = "#f7768e"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color2"
+priority = 80
+set = "#73daca"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color10"
+priority = 80
+set = "#73daca"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color3"
+priority = 80
+set = "#e0af68"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color11"
+priority = 80
+set = "#e0af68"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color4"
+priority = 80
+set = "#7aa2f7"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color12"
+priority = 80
+set = "#7aa2f7"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color5"
+priority = 80
+set = "#bb9af7"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color13"
+priority = 80
+set = "#bb9af7"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color6"
+priority = 80
+set = "#7dcfff"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color14"
+priority = 80
+set = "#7dcfff"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color7"
+priority = 80
+set = "#c0caf5"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color15"
+priority = 80
+set = "#c0caf5"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor"
+priority = 80
+set = "#c0caf5"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor_text_color"
+priority = 80
+set = "#1a1b26"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_foreground"
+priority = 80
+set = "none"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_background"
+priority = 80
+set = "#28344a"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "url_color"
+priority = 80
+set = "#9ece6a"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_style"
+priority = 40
+set = "powerline"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_tab_foreground"
+priority = 80
+set = "#3d59a1"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_tab_background"
+priority = 80
+set = "#16161e"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "active_tab_font_style"
+priority = 40
+set = "bold"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_tab_foreground"
+priority = 80
+set = "#787c99"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_tab_background"
+priority = 80
+set = "#16161e"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "inactive_tab_font_style"
+priority = 40
+set = "normal"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "tab_bar_background"
+priority = 80
+set = "#101014"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_edge"
+priority = 40
+set = "top"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_powerline_style"
+priority = 40
+set = "slanted"
+
+[[apps.swaync.ops]]
+fragment = "style-2"
+priority = 70
+target = "style"
+
+[[apps.waybar.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[[apps.wlogout.ops]]
+fragment = "style-3"
+priority = 70
+target = "style"
+
+[[apps.wofi.ops]]
+fragment = "style-4"
+priority = 70
+target = "style"
+
+[assets.style]
+digest = "sha256:eb377de9184ae761366be60f1e5b1fbc0231b1cca397f3d2c6d2b3d27175bb51"
+kind = "fragment"
+path = "config/waybar/style.css"
+size = 2783
+
+[assets.style-2]
+digest = "sha256:527bdf0bc8951aec8a5cd9cd92ac7783e96e8b91bab93ab3bcea40bd8206407b"
+kind = "fragment"
+path = "config/swaync/style.css"
+size = 6826
+
+[assets.style-3]
+digest = "sha256:40c7225dd518740f4c43ac94e92fba38fb9a10fbc6cff9ce963dc505961f653f"
+kind = "fragment"
+path = "config/wlogout/style.css"
+size = 1541
+
+[assets.style-4]
+digest = "sha256:5b329174dd8510e4ec34deab6077f78e6c77bdbb8dcfdbabe9b74c949c414fb4"
+kind = "fragment"
+path = "config/wofi/style.css"
+size = 1603
+
+[assets.wm]
+digest = "sha256:d54599ca50b2af4665bef860cdd839c6d4b0a116f6f46a1d0cf67222cd83a408"
+kind = "preview"
+path = "wm.jpg"
+size = 136379

@@ -1,0 +1,232 @@
+# Drafted by `daha-cli import` from https://github.com/thomasmartinoa/Orrery-dotfiles.git at 0b187f559dfd26f72e7a9f788c6cd0ab92c0f980.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 1 dwindle settings, 3 general settings, 1 gestures settings, 9 input settings, 1 master settings, 1 xwayland settings, 19 hl.animation calls, 52 hl.bind calls, 8 hl.curve calls, 13 hl.env calls, 1 hl.gesture calls, 11 hl.layer_rule calls, 1 hl.monitor calls, 1 hl.on calls, 2 hl.window_rule calls (not theme, or animations, which aren't taken from Lua yet)
+#   left out: hyprland: 8 parts of its Lua need running to read (modules/env:36: a if block isn't read (it would need running), ...)
+#   left out: kitty: 13 keyboard shortcuts, 8 other settings
+#   left out: gtk3: its style @imports other files, which won't be next to it: review it
+#   left out: gtk4: its style @imports other files, which won't be next to it: review it
+#   left out: alacritty: found alacritty/.config/alacritty/alacritty.toml, but the importer doesn't read alacritty yet
+#   left out: hyprlock: found hyprland/.config/hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+
+daha = 1
+
+[pack]
+authors = [ "thomasmartinoa" ]
+description = "Taken from thomasmartinoa/Orrery-dotfiles at 0b187f559dfd, referenced there and not copied: only what themes an app.\n\n- hyprland: hyprland/.config/hypr/hyprland.lua and 6 module(s) it requires: 21 settings (read from its Lua, not run)\n- kitty: kittyterminal/.config/kitty/kitty.conf: 5 settings\n- gtk3: gtk/.config/gtk-3.0/gtk.css (the whole style)\n- gtk4: gtk/.config/gtk-4.0/gtk.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.thomasmartinoa-orrery-dotfiles"
+license = "MIT"
+name = "Orrery-dotfiles"
+preview = [ "cover", "themes", "eclipse" ]
+summary = "thomasmartinoa's rice: its look for hyprland, kitty, gtk3 and gtk4"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "0b187f559dfd26f72e7a9f788c6cd0ab92c0f980"
+ref = "main"
+repo = "https://github.com/thomasmartinoa/Orrery-dotfiles.git"
+
+[requires]
+fonts = [ "JetBrains Mono Nerd Font" ]
+
+[[apps.gtk3.ops]]
+fragment = "gtk"
+priority = 70
+target = "style"
+
+[[apps.gtk4.ops]]
+fragment = "gtk-2"
+priority = 70
+target = "style"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 5
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 7
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 1
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 4
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding_power" ]
+priority = 60
+set = 4
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "active_opacity" ]
+priority = 50
+set = "0.9"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "inactive_opacity" ]
+priority = 50
+set = "0.7"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_inactive" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "range" ]
+priority = 50
+set = 4
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "render_power" ]
+priority = 50
+set = 3
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 8
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 3
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "ignore_opacity" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "new_optimizations" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "vibrancy" ]
+priority = 50
+set = "0.1696"
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_splash_rendering" ]
+priority = 30
+set = true
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "JetBrains Mono Nerd Font"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = "11.0"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "cursor_shape"
+priority = 50
+set = "beam"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_margin_width"
+priority = 50
+set = "21.75"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "background_opacity"
+priority = 50
+set = "0.50"
+
+[assets.cover]
+digest = "sha256:e0d2a49f1801581e6bb3dca82add492fe66e55f53fba672667c2da85a9f12464"
+kind = "preview"
+path = "Screenshots/cover.png"
+size = 415574
+
+[assets.eclipse]
+digest = "sha256:a2f2632d6fbec1eaf23d0739dd843b1b4482aae2b39d5416759df9831e0f1b35"
+kind = "preview"
+path = "Screenshots/eclipse.jpg"
+size = 125053
+
+[assets.gtk]
+digest = "sha256:9b8b43fc00c20ccb5e3ecc216fddfbd6ae541280ea8a1187f9b616469d4ab5d7"
+kind = "fragment"
+path = "gtk/.config/gtk-3.0/gtk.css"
+size = 2419
+
+[assets.gtk-2]
+digest = "sha256:6d948ea53af4300b0572b5ab3f49bd771bba1efe30ea901e770ee97a0fee2f14"
+kind = "fragment"
+path = "gtk/.config/gtk-4.0/gtk.css"
+size = 2969
+
+[assets.themes]
+digest = "sha256:72331712f9930f3f00eac81aa06b6174f5bbe3f9548afc5f141c4720876e911b"
+kind = "preview"
+path = "Screenshots/themes.webp"
+size = 3708056

@@ -1,0 +1,502 @@
+# Drafted by `daha-cli import` from https://github.com/yurihikari/garuda-hyprdots.git at 8f7a32fcea57621b15f4325d4b8bb97624b61833.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 104 bind, 8 binde, 2 bindl, 2 bindm, 4 binds settings, 5 debug settings, 6 dwindle settings, 1 exec-once, 1 general settings, 1 gesture, 6 gestures settings, 27 input settings, 1 layerrule, 3 master settings, 10 misc settings, 1 monitor, 41 windowrule settings (not theme: binds, startup commands, monitors, input and the like)
+#   left out: kitty: 5 other settings
+#   left out: waybar: its style @imports other files, which won't be next to it: review the colours
+#   left out: waybar: its config (modules, layout) isn't imported: that's a desktop, not a theme
+#   left out: alacritty: its colours are in alacritty/alacritty.toml itself, and daha can't take single TOML settings yet (only theme files it imports)
+#   left out: cava: 4 settings that aren't its theme
+#   left out: foot: 13 settings that aren't its theme
+#   left out: wlogout: its style @imports other files, which won't be next to it: review it
+#   left out: fastfetch: found fastfetch/config.jsonc, but the importer doesn't read fastfetch yet
+#   left out: gtk3: found gtk-3.0/settings.ini, but the importer doesn't read gtk3 yet
+#   left out: hyprlock: found hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+#   left out: mako: found mako/config, but the importer doesn't read mako yet
+
+daha = 1
+
+[pack]
+authors = [ "yurihikari" ]
+description = "Taken from yurihikari/garuda-hyprdots at 8f7a32fcea57, referenced there and not copied: only what themes an app.\n\n- hyprland: hypr/hyprland.conf and 1 file(s) it sources: 16 settings, 10 animation lines\n- kitty: kitty/kitty.conf and 1 included file(s): 44 settings\n- waybar: waybar/style.css (the whole style)\n- rofi: rofi/basic/.local/share/rofi/themes/catppuccin-mocha.rasi (its theme)\n- cava: cava/config: 6 settings\n- foot: hypr/foot/foot.ini: 1 settings\n- wlogout: hypr/wlogout/style.css (the whole style)\n- wofi: wofi/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.yurihikari-garuda-hyprdots"
+license = "MIT"
+name = "garuda-hyprdots"
+summary = "yurihikari's rice: its look for hyprland, kitty, waybar, rofi, cava, foot, wlogout and wofi"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "8f7a32fcea57621b15f4325d4b8bb97624b61833"
+ref = "master"
+repo = "https://github.com/yurihikari/garuda-hyprdots.git"
+
+[requires]
+fonts = [ "JetBrainsMonoNL Nerd Font Mono" ]
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient" ]
+priority = 80
+set = 1
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_count" ]
+priority = 80
+set = 4
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_1" ]
+priority = 80
+set = "'#c6a0f6'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_2" ]
+priority = 80
+set = "'#f5bde6'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_3" ]
+priority = 80
+set = "'#f0c6c6'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_4" ]
+priority = 80
+set = "'#f4dbd6'"
+
+[[apps.foot.ops]]
+group = "spacing"
+key = [ "cursor", "style" ]
+priority = 50
+set = "block"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 5
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 10
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col.active_border" ]
+priority = 80
+set = "0xFFB4A1DB 0xFFD04E9D 45deg"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col.inactive_border" ]
+priority = 80
+set = "1e2030 1e2030 45deg"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 10
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "active_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "inactive_opacity" ]
+priority = 50
+set = "0.8"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "fullscreen_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_inactive" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_strength" ]
+priority = 50
+set = "0.5"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 16
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_splash_rendering" ]
+priority = 30
+set = false
+
+[[apps.hyprland.ops]]
+add = [
+    "windowsIn,1,5,default,popin 0%",
+    "windowsOut,1,5,default,popin",
+    "windowsMove,1,5,default,slide",
+    "fadeIn,1,8,default",
+    "fadeOut,1,8,default",
+    "fadeSwitch,1,8,default",
+    "fadeShadow,1,8,default",
+    "fadeDim,1,8,default",
+    "border,1,10,default",
+    "workspaces,1,5,default,slide"
+]
+group = "animations"
+key = "animation"
+priority = 40
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "foreground"
+priority = 80
+set = "#CAD3F5"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "background"
+priority = 80
+set = "#24273A"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_foreground"
+priority = 80
+set = "#24273A"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_background"
+priority = 80
+set = "#F4DBD6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor"
+priority = 80
+set = "#F4DBD6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor_text_color"
+priority = 80
+set = "#24273A"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "url_color"
+priority = 80
+set = "#F4DBD6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_border_color"
+priority = 80
+set = "#B7BDF8"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_border_color"
+priority = 80
+set = "#6E738D"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "bell_border_color"
+priority = 80
+set = "#EED49F"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "wayland_titlebar_color"
+priority = 80
+set = "system"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_tab_foreground"
+priority = 80
+set = "#181926"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_tab_background"
+priority = 80
+set = "#C6A0F6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_tab_foreground"
+priority = 80
+set = "#CAD3F5"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_tab_background"
+priority = 80
+set = "#1E2030"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "tab_bar_background"
+priority = 80
+set = "#181926"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "mark1_foreground"
+priority = 80
+set = "#24273A"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "mark1_background"
+priority = 80
+set = "#B7BDF8"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "mark2_foreground"
+priority = 80
+set = "#24273A"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "mark2_background"
+priority = 80
+set = "#C6A0F6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "mark3_foreground"
+priority = 80
+set = "#24273A"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "mark3_background"
+priority = 80
+set = "#7DC4E4"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color0"
+priority = 80
+set = "#494D64"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color8"
+priority = 80
+set = "#5B6078"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color1"
+priority = 80
+set = "#ED8796"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color9"
+priority = 80
+set = "#ED8796"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color2"
+priority = 80
+set = "#A6DA95"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color10"
+priority = 80
+set = "#A6DA95"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color3"
+priority = 80
+set = "#EED49F"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color11"
+priority = 80
+set = "#EED49F"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color4"
+priority = 80
+set = "#8AADF4"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color12"
+priority = 80
+set = "#8AADF4"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color5"
+priority = 80
+set = "#F5BDE6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color13"
+priority = 80
+set = "#F5BDE6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color6"
+priority = 80
+set = "#8BD5CA"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color14"
+priority = 80
+set = "#8BD5CA"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color7"
+priority = 80
+set = "#B8C0E0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color15"
+priority = 80
+set = "#A5ADCB"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = 18
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "JetBrainsMonoNL Nerd Font Mono"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_padding_width"
+priority = 50
+set = 10
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_edge"
+priority = 40
+set = "top"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_style"
+priority = 40
+set = "powerline"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_powerline_style"
+priority = 40
+set = "slanted"
+
+[[apps.rofi.ops]]
+fragment = "catppuccin-mocha"
+priority = 70
+
+[[apps.waybar.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[[apps.wlogout.ops]]
+fragment = "style-2"
+priority = 70
+target = "style"
+
+[[apps.wofi.ops]]
+fragment = "style-3"
+priority = 70
+target = "style"
+
+[assets.catppuccin-mocha]
+digest = "sha256:c6d86cfe99c2e962a9dd3c1cd62a8dca3c737a9f82459338edc0a300fa434f10"
+kind = "fragment"
+path = "rofi/basic/.local/share/rofi/themes/catppuccin-mocha.rasi"
+size = 1792
+
+[assets.style]
+digest = "sha256:cbde36e805e04e9f0da176f3218756ec2a63000fca26c045bb56389258485168"
+kind = "fragment"
+path = "waybar/style.css"
+size = 7114
+
+[assets.style-2]
+digest = "sha256:39e0ec01bc8bdce2d9c4a354179ab2a4d7eba6b67630f40f745f456f8a3d85d0"
+kind = "fragment"
+path = "hypr/wlogout/style.css"
+size = 1477
+
+[assets.style-3]
+digest = "sha256:9acd6c640c786c26b84e78c84ca05fb46be570f28cee1e7ffe5cc9cb154765cd"
+kind = "fragment"
+path = "wofi/style.css"
+size = 2330

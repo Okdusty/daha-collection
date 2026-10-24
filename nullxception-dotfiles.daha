@@ -1,0 +1,147 @@
+# Drafted by `daha-cli import` from https://github.com/nullxception/dotfiles.git at 911f430a7769f9be8e907754cd51e5132ef65ad1.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 2 bind, 44 bindd, 3 bindde, 8 binde, 2 bindm, 2 dwindle settings, 15 env, 1 exec, 14 exec-once, 1 general settings, 2 input settings, 1 master settings, 3 monitor, 2 submap, 70 windowrule settings, 10 workspace (not theme: binds, startup commands, monitors, input and the like)
+#   left out: waybar: its config (modules, layout) isn't imported: that's a desktop, not a theme
+#   left out: hyprlock: found hyprland/.config/hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+#   left out: mako: found hyprland/.config/mako/config, but the importer doesn't read mako yet
+
+daha = 1
+
+[pack]
+authors = [ "nullxception" ]
+description = "Taken from nullxception/dotfiles at 911f430a7769, referenced there and not copied: only what themes an app.\n\n- hyprland: hyprland/.config/hypr/hyprland.conf and 6 file(s) it sources: 13 settings, 7 animation lines\n- waybar: hyprland/.config/waybar/style.css (the whole style)\n- rofi: hyprland/.config/rofi/cherry.rasi (its theme)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.nullxception-dotfiles"
+license = "BSD-3-Clause"
+name = "nullxception's dotfiles"
+summary = "nullxception's rice: its look for hyprland, waybar and rofi"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "911f430a7769f9be8e907754cd51e5132ef65ad1"
+ref = "main"
+repo = "https://github.com/nullxception/dotfiles.git"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 0
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 0
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 1
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col.active_border" ]
+priority = 80
+set = "rgba(aaaaff20) rgb(946ff7) rgb(ff568e) rgba(aaaaff20) 45deg"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col.inactive_border" ]
+priority = 80
+set = "rgba(101017f2) 45deg"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 0
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 3
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 2
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "new_optimizations" ]
+priority = 50
+set = "on"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "decoration", "shadow", "color" ]
+priority = 80
+set = "rgba(101017a0)"
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
+
+[[apps.hyprland.ops]]
+add = [ "eoc, 0.215, 0.61, 0.355, 1" ]
+group = "animations"
+key = "bezier"
+priority = 40
+
+[[apps.hyprland.ops]]
+add = [
+    "windows, 1, 3, eoc, slide",
+    "border, 1, 3, eoc",
+    "borderangle, 1, 3, eoc",
+    "fade, 1, 3, eoc",
+    "workspaces, 1, 3, eoc, slide",
+    "layers, 1, 3, eoc, slide"
+]
+group = "animations"
+key = "animation"
+priority = 40
+
+[[apps.rofi.ops]]
+fragment = "cherry"
+priority = 70
+
+[[apps.waybar.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[assets.cherry]
+digest = "sha256:e7bc8eb3177e1b9c0916a73302917e0366c8d7d8c912326a3ae9fa9c00a8334b"
+kind = "fragment"
+path = "hyprland/.config/rofi/cherry.rasi"
+size = 1700
+
+[assets.style]
+digest = "sha256:240bbbb3db4dbb9e85b4fdeb6b36a300f31922eea5e662cb174ba5d6d39b708b"
+kind = "fragment"
+path = "hyprland/.config/waybar/style.css"
+size = 2603

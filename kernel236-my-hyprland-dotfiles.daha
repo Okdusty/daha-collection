@@ -1,0 +1,156 @@
+# Drafted by `daha-cli import` from https://github.com/Kernel236/my-hyprland-dotfiles.git at 98b17a270212fc907c5b305dd661bad4f738ca89.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 8 input settings, 73 hl.bind calls, 1 hl.device calls, 19 hl.env calls, 1 hl.gesture calls, 2 hl.layer_rule calls, 3 hl.monitor calls, 1 hl.on calls, 10 hl.window_rule calls (not theme, or animations, which aren't taken from Lua yet)
+#   left out: hyprland: 1 parts of its Lua need running to read (conf.keybinds:94: a for block isn't read (it would need running))
+#   left out: kitty: 8 other settings
+#   left out: waybar: its style @imports other files, which won't be next to it: review the colours
+#   left out: waybar: its config (modules, layout) isn't imported: that's a desktop, not a theme
+#   left out: rofi: its theme @imports other files: review it
+#   left out: btop: its theme TTY.theme isn't in their repository (btop's own themes aren't packed)
+
+daha = 1
+
+[pack]
+authors = [ "Kernel236" ]
+description = "Taken from Kernel236/my-hyprland-dotfiles at 98b17a270212, referenced there and not copied: only what themes an app.\n\n- hyprland: .config/hypr/hyprland.lua and 5 module(s) it requires: 0 settings (read from its Lua, not run)\n- kitty: .config/kitty/kitty.conf: 10 settings\n- waybar: .config/waybar/style.css (the whole style)\n- rofi: .config/rofi/launcher.rasi (its theme)\n- swaync: .config/swaync/style.css (the whole style)\n- wlogout: .config/wlogout/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+id = "com.github.okdusty.kernel236-my-hyprland-dotfiles"
+license = "Apache-2.0"
+name = "my-hyprland-dotfiles"
+preview = [ "preview", "btop-catppuccin", "btop-matrix" ]
+summary = "Kernel236's rice: its look for kitty, waybar, rofi, swaync and wlogout"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "98b17a270212fc907c5b305dd661bad4f738ca89"
+ref = "main"
+repo = "https://github.com/Kernel236/my-hyprland-dotfiles.git"
+
+[requires]
+fonts = [ "JetBrainsMono Nerd Font" ]
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = "12.0"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_padding_width"
+priority = 50
+set = 8
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "JetBrainsMono Nerd Font"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "italic_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_italic_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "background_opacity"
+priority = 50
+set = "0.60"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "cursor_shape"
+priority = 50
+set = "block"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_edge"
+priority = 40
+set = "top"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_style"
+priority = 40
+set = "powerline"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_powerline_style"
+priority = 40
+set = "slanted"
+
+[[apps.rofi.ops]]
+fragment = "launcher"
+priority = 70
+
+[[apps.swaync.ops]]
+fragment = "style-2"
+priority = 70
+target = "style"
+
+[[apps.waybar.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[[apps.wlogout.ops]]
+fragment = "style-3"
+priority = 70
+target = "style"
+
+[assets.btop-catppuccin]
+digest = "sha256:f32afb6aab18e30a3f93e981e9e33048b96565c1157adc2414dfeddc1b1429c7"
+kind = "preview"
+path = "screenshots/btop_catppuccin.png"
+size = 1837770
+
+[assets.btop-matrix]
+digest = "sha256:79084e50b9c81cbf641eba89de25679fd03ae9cb56f23ef28b9d6ea0de65352b"
+kind = "preview"
+path = "screenshots/btop_matrix.png"
+size = 1352248
+
+[assets.launcher]
+digest = "sha256:e6e20db0a179b5ce23a887b88dc9aad7a036165623b2816adc0a5e48729fce3e"
+kind = "fragment"
+path = ".config/rofi/launcher.rasi"
+size = 3317
+
+[assets.preview]
+digest = "sha256:9cf460ad5a1aaef3d88a2bdd2909f9f5979082ed90d97c3353d57268748d1632"
+kind = "preview"
+path = "screenshots/preview.gif"
+size = 865483
+
+[assets.style]
+digest = "sha256:0862af417767eb40d3929de0af87d11b4354a47224fb4d09158c0a70980b1650"
+kind = "fragment"
+path = ".config/waybar/style.css"
+size = 885
+
+[assets.style-2]
+digest = "sha256:06dfeca25cd5e7c9cb12bbf2eaee4784dccf18c911d6b8821dacb8d7c6c957d7"
+kind = "fragment"
+path = ".config/swaync/style.css"
+size = 8703
+
+[assets.style-3]
+digest = "sha256:c64fc856712081eff18811093d12b62375251d206a24595732231cccd4812545"
+kind = "fragment"
+path = ".config/wlogout/style.css"
+size = 1548

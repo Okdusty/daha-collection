@@ -1,0 +1,348 @@
+# Drafted by `daha-cli import` from https://github.com/andreumassanet/impasto.git at 1a2ce200f4494aca9b5d3e17ea00f807c6086231.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 1 binds settings, 1 cursor settings, 1 dwindle settings, 2 ecosystem settings, 7 general settings, 12 input settings, 1 master settings, 2 hl.bind calls, 9 hl.env calls, 1 hl.gesture calls, 1 hl.layer_rule calls, 1 hl.monitor calls, 3 hl.on calls, 14 hl.window_rule calls (not theme, or animations, which aren't taken from Lua yet)
+#   left out: hyprland: 82 parts of its Lua need running to read (modules.look:83: a if block isn't read (it would need running), ...)
+#   left out: kitty: 10 other settings
+#   left out: btop: its theme impasto.theme isn't in their repository (btop's own themes aren't packed)
+#   left out: fastfetch: found home/.config/fastfetch/config.jsonc, but the importer doesn't read fastfetch yet
+#   left out: gtk3: found home/.config/gtk-3.0/settings.ini, but the importer doesn't read gtk3 yet
+#   left out: gtk4: found home/.config/gtk-4.0/settings.ini, but the importer doesn't read gtk4 yet
+
+daha = 1
+
+[pack]
+authors = [ "andreumassanet" ]
+description = "Taken from andreumassanet/impasto at 1a2ce200f449, referenced there and not copied: only what themes an app.\n\n- hyprland: home/.config/hypr/hyprland.lua and 9 module(s) it requires: 19 settings (read from its Lua, not run)\n- kitty: home/.config/kitty/kitty.conf: 29 settings\n- cava: home/.config/cava/config: 1 settings\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.andreumassanet-impasto"
+license = "GPL-3.0"
+name = "impasto"
+preview = [ "banner", "hero", "island" ]
+summary = "andreumassanet's rice: its look for hyprland, kitty and cava"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "1a2ce200f4494aca9b5d3e17ea00f807c6086231"
+ref = "main"
+repo = "https://github.com/andreumassanet/impasto.git"
+
+[requires]
+fonts = [ "JetBrainsMono Nerd Font Mono" ]
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "theme" ]
+priority = 80
+set = "'impasto'"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 7
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 18
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 0
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 22
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding_power" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "active_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "inactive_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "range" ]
+priority = 50
+set = 14
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "render_power" ]
+priority = 50
+set = 3
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 6
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 2
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "ignore_opacity" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "new_optimizations" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "xray" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = -1
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "JetBrainsMono Nerd Font Mono"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "background_opacity"
+priority = 50
+set = "0.90"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_padding_width"
+priority = 50
+set = 8
+
+[[apps.kitty.ops]]
+group = "window"
+key = "cursor_shape"
+priority = 50
+set = "block"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "background"
+priority = 80
+set = "#000000"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "foreground"
+priority = 80
+set = "#dddddd"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor"
+priority = 80
+set = "#ffffff"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_background"
+priority = 80
+set = "#56b6c2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_foreground"
+priority = 80
+set = "#000000"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_tab_background"
+priority = 80
+set = "#56b6c2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_tab_foreground"
+priority = 80
+set = "#000000"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_tab_background"
+priority = 80
+set = "#000000"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_tab_foreground"
+priority = 80
+set = "#dddddd"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color0"
+priority = 80
+set = "#4c4c4c"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color1"
+priority = 80
+set = "#bb0000"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color2"
+priority = 80
+set = "#5ede8f"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color3"
+priority = 80
+set = "#f2f067"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color4"
+priority = 80
+set = "#266ad7"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color5"
+priority = 80
+set = "#bb00bb"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color6"
+priority = 80
+set = "#00d9df"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color7"
+priority = 80
+set = "#bbbbbb"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color8"
+priority = 80
+set = "#545454"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color9"
+priority = 80
+set = "#ff5555"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color10"
+priority = 80
+set = "#55ff55"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color11"
+priority = 80
+set = "#ffff55"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color12"
+priority = 80
+set = "#5555ff"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color13"
+priority = 80
+set = "#ff55ff"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color14"
+priority = 80
+set = "#55ffff"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color15"
+priority = 80
+set = "#ffffff"
+
+[assets.banner]
+digest = "sha256:fec9594fcbc2af1f6254bd62b3011e134240071eb5e66ff7f634a3c5fe05c7ae"
+kind = "preview"
+path = ".github/assets/banner.jpg"
+size = 635600
+
+[assets.hero]
+digest = "sha256:f44c30627031eb0403c4999961f0a1d70e6971aeadd0fc80cb3a14f441dbf712"
+kind = "preview"
+path = ".github/assets/hero.jpg"
+size = 1010950
+
+[assets.island]
+digest = "sha256:fbe7a913febf22b83676af8fb4c60b6468eb13a79abd96a18169613cf36b9fa3"
+kind = "preview"
+path = ".github/assets/island.gif"
+size = 2884055

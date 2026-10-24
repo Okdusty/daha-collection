@@ -1,0 +1,236 @@
+# Drafted by `daha-cli import` from https://github.com/sumithemmadi/hyprland-dotfiles.git at effaf5321e1685d7b34ece60eace1b211bbffcf9.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 51 bind, 2 bindm, 2 dwindle settings, 6 env, 1 exec, 6 exec-once, 3 general settings, 1 gestures settings, 8 input settings, 1 master settings, 1 monitor, 6 windowrulev2 (not theme: binds, startup commands, monitors, input and the like)
+#   left out: hyprpaper: its wallpaper $HOME/.local/share/wallpapers/City-Rain.png isn't in their repository
+#   left out: kitty: 2 other settings
+#   left out: waybar: its style @imports other files, which won't be next to it: review the colours
+#   left out: waybar: its config (modules, layout) isn't imported: that's a desktop, not a theme
+
+daha = 1
+
+[pack]
+authors = [ "sumithemmadi" ]
+description = "Taken from sumithemmadi/hyprland-dotfiles at effaf5321e16, referenced there and not copied: only what themes an app.\n\n- hyprland: dotfiles/config/hypr/hyprland.conf: 15 settings, 7 animation lines\n- kitty: dotfiles/config/kitty/kitty.conf: 7 settings\n- waybar: dotfiles/config/waybar/style.css (the whole style)\n- swaync: dotfiles/config/swaync/style.css (the whole style)\n- wofi: dotfiles/config/wofi/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.sumithemmadi-hyprland-dotfiles"
+license = "MIT"
+name = "sumithemmadi's hyprland-dotfiles"
+preview = [ "wall1", "wall2", "notifications" ]
+summary = "sumithemmadi's rice: its look for hyprland, kitty, waybar, swaync and wofi"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "effaf5321e1685d7b34ece60eace1b211bbffcf9"
+ref = "main"
+repo = "https://github.com/sumithemmadi/hyprland-dotfiles.git"
+
+[requires]
+fonts = [ "FiraCode Nerd Font Mono" ]
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 4
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 8
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 1
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col.active_border" ]
+priority = 80
+set = "rgba(33ccffee) rgba(00ff99ee) 45deg"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col.inactive_border" ]
+priority = 80
+set = "rgba(595959aa)"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 10
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "active_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "inactive_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 3
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 1
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "vibrancy" ]
+priority = 50
+set = "0.1696"
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = -1
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = false
+
+[[apps.hyprland.ops]]
+add = [ "myBezier, 0.05, 0.9, 0.1, 1.05" ]
+group = "animations"
+key = "bezier"
+priority = 40
+
+[[apps.hyprland.ops]]
+add = [
+    "windows, 1, 7, myBezier",
+    "windowsOut, 1, 7, default, popin 80%",
+    "border, 1, 10, default",
+    "borderangle, 1, 8, default",
+    "fade, 1, 7, default",
+    "workspaces, 1, 6, default"
+]
+group = "animations"
+key = "animation"
+priority = 40
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "FiraCode Nerd Font Mono"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "italic_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_italic_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = "11.0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor"
+priority = 80
+set = "#8fee96"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "background_opacity"
+priority = 50
+set = "0.95"
+
+[[apps.swaync.ops]]
+fragment = "style-2"
+priority = 70
+target = "style"
+
+[[apps.waybar.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[[apps.wofi.ops]]
+fragment = "style-3"
+priority = 70
+target = "style"
+
+[assets.notifications]
+digest = "sha256:c337c7b3a55427d17e28e531aab78530cf4e8cf4ed4c64b794ceb88c0cb0a076"
+kind = "preview"
+path = "pics/notifications.jpeg"
+size = 82405
+
+[assets.style]
+digest = "sha256:ec8984fc8977c19eaa7229da1850038e6b6449f7e412cfa3298d994df5668bde"
+kind = "fragment"
+path = "dotfiles/config/waybar/style.css"
+size = 9706
+
+[assets.style-2]
+digest = "sha256:400aef3cf524fe7942b274677fccef1f54e61b568d3bd311354cbaf798c3c940"
+kind = "fragment"
+path = "dotfiles/config/swaync/style.css"
+size = 8653
+
+[assets.style-3]
+digest = "sha256:012d8b3b1b931ebed1bef0e84219ed0af5fee1794d530f127875f30d63444784"
+kind = "fragment"
+path = "dotfiles/config/wofi/style.css"
+size = 745
+
+[assets.wall1]
+digest = "sha256:7a7f517ffc47550c7d073ac9ce88c84e56249b2a3ffd2c156fc2036a079e5d48"
+kind = "preview"
+path = "pics/wall1.jpeg"
+size = 80186
+
+[assets.wall2]
+digest = "sha256:cd1512e557e0e3fe15afab64ab7cedac5df1f6118b5c200dc012dc849a613d07"
+kind = "preview"
+path = "pics/wall2.jpeg"
+size = 196410

@@ -1,0 +1,109 @@
+# Drafted by `daha-cli import` from https://github.com/elpritchos/omadora.git at 069da82277d3e71de35e52b814ed2cf5e3a768e9.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 7 parts of its Lua need running to read (config/hypr/hyprland.lua:11: require("default.hypr.omadora"): not in the repository, ...)
+#   left out: kitty: 2 keyboard shortcuts, 14 other settings
+#   left out: waybar: its style @imports other files, which won't be next to it: review the colours
+#   left out: waybar: its config (modules, layout) isn't imported: that's a desktop, not a theme
+#   left out: btop: its theme current.theme isn't in their repository (btop's own themes aren't packed)
+#   left out: wofi: its style @imports other files, which won't be next to it: review it
+#   left out: alacritty: found config/alacritty/alacritty.toml, but the importer doesn't read alacritty yet
+#   left out: fastfetch: found config/fastfetch/config.jsonc, but the importer doesn't read fastfetch yet
+#   left out: ghostty: found config/ghostty/config, but the importer doesn't read ghostty yet
+#   left out: hyprlock: found config/hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+#   left out: hyprpaper: found config/hypr/hyprpaper.conf, but the importer doesn't read hyprpaper yet
+
+daha = 1
+
+[pack]
+authors = [ "elpritchos" ]
+description = "Taken from elpritchos/omadora at 069da82277d3, referenced there and not copied: only what themes an app.\n\n- hyprland: config/hypr/hyprland.lua: 0 settings (read from its Lua, not run)\n- kitty: config/kitty/kitty.conf: 7 settings\n- waybar: config/waybar/style.css (the whole style)\n- wofi: config/wofi/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+id = "com.github.okdusty.elpritchos-omadora"
+license = "MIT"
+name = "omadora"
+preview = [ "desktop-dark" ]
+summary = "elpritchos's rice: its look for kitty, waybar and wofi"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "069da82277d3e71de35e52b814ed2cf5e3a768e9"
+ref = "master"
+repo = "https://github.com/elpritchos/omadora.git"
+
+[requires]
+fonts = [ "JetBrainsMono Nerd Font" ]
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "JetBrainsMono Nerd Font"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = "10.5"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_padding_width"
+priority = 50
+set = 4
+
+[[apps.kitty.ops]]
+group = "window"
+key = "hide_window_decorations"
+priority = 50
+set = "yes"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_edge"
+priority = 40
+set = "top"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_style"
+priority = 40
+set = "powerline"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_powerline_style"
+priority = 40
+set = "slanted"
+
+[[apps.waybar.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[[apps.wofi.ops]]
+fragment = "style-2"
+priority = 70
+target = "style"
+
+[assets.desktop-dark]
+digest = "sha256:e19ecccb1d73c4dde1ade1abedd28b6668b2cb301450d88b832d9f57114e9ceb"
+kind = "preview"
+path = "docs/screenshots/desktop-dark.png"
+size = 373571
+
+[assets.style]
+digest = "sha256:d77dfe9d38fcc1cfc5f1358ba65096a63f2350a1217d29ffaf75503fa8025586"
+kind = "fragment"
+path = "config/waybar/style.css"
+size = 1255
+
+[assets.style-2]
+digest = "sha256:522e07acab94945062c2b144801b016748fbe4594beddf513219d108a0c36de1"
+kind = "fragment"
+path = "config/wofi/style.css"
+size = 824

@@ -1,0 +1,136 @@
+# Drafted by `daha-cli import` from https://github.com/NeKoRoSYS/NeKoRoSHELL.git at aa504d93a3e5929061b359e8146b388f1092844c.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 28 bind, 6 bindel, 4 bindl, 2 bindm, 1 debug settings, 16 env, 16 exec-once, 8 input settings, 1 misc settings, 1 render { explicit_sync, 11 windowrule, 15 windowrule settings, 1 xwayland settings (not theme: binds, startup commands, monitors, input and the like)
+#   left out: hyprland: `source = ./user/configs/environment.conf` isn't in their repository
+#   left out: hyprland: `source = ./user/configs/hardware.conf` isn't in their repository
+#   left out: hyprland: `source = ./user/configs/monitors.conf` isn't in their repository
+#   left out: hyprland: `source = ./user/configs/appearance.conf` isn't in their repository
+#   left out: hyprland: `source = ./user/configs/animations.conf` isn't in their repository
+#   left out: hyprland: `source = ./user/configs/windowrules.conf` isn't in their repository
+#   left out: hyprland: `source = ./user/configs/input.conf` isn't in their repository
+#   left out: hyprland: `source = ./user/configs/keybinds.conf` isn't in their repository
+#   left out: kitty: 2 other settings
+#   left out: waybar: its style @imports other files, which won't be next to it: review the colours
+#   left out: waybar: its config (modules, layout) isn't imported: that's a desktop, not a theme
+#   left out: swaync: its style @imports other files, which won't be next to it: review it
+#   left out: wlogout: its style @imports other files, which won't be next to it: review it
+#   left out: cava: found .config/cava/config, but the importer doesn't read cava yet
+#   left out: fastfetch: found .config/fastfetch/config.jsonc, but the importer doesn't read fastfetch yet
+#   left out: hyprlock: found .config/hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+
+daha = 1
+
+[pack]
+authors = [ "NeKoRoSYS" ]
+description = "Taken from NeKoRoSYS/NeKoRoSHELL at aa504d93a3e5, referenced there and not copied: only what themes an app.\n\n- hyprland: .config/hypr/hyprland.conf and 8 file(s) it sources: 0 settings\n- kitty: .config/kitty/kitty.conf: 5 settings\n- waybar: .config/waybar/style.css (the whole style)\n- rofi: .config/rofi/skins/legacy/config.rasi (its theme)\n- swaync: .config/swaync/style.css (the whole style)\n- wlogout: .config/wlogout/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+id = "com.github.okdusty.nekorosys-nekoroshell"
+license = "GPL-3.0"
+name = "NeKoRoSHELL"
+preview = [ "image", "image-5", "image-3" ]
+summary = "NeKoRoSYS's rice: its look for kitty, waybar, rofi, swaync and wlogout"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "aa504d93a3e5929061b359e8146b388f1092844c"
+ref = "main"
+repo = "https://github.com/NeKoRoSYS/NeKoRoSHELL.git"
+
+[requires]
+fonts = [ "JetBrains Mono" ]
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "JetBrains Mono"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_font"
+priority = 60
+set = "JetBrains Mono Bold"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "italic_font"
+priority = 60
+set = "JetBrains Mono Italic"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_italic_font"
+priority = 60
+set = "JetBrains Mono Bold Italic"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_padding_width"
+priority = 50
+set = "5 10"
+
+[[apps.rofi.ops]]
+fragment = "config"
+priority = 70
+
+[[apps.swaync.ops]]
+fragment = "style-2"
+priority = 70
+target = "style"
+
+[[apps.waybar.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[[apps.wlogout.ops]]
+fragment = "style-3"
+priority = 70
+target = "style"
+
+[assets.config]
+digest = "sha256:ba65522d6cb412c1230b2d6e4d7106d1544882c8bd7a9b839e60e4be5ebe389b"
+kind = "fragment"
+path = ".config/rofi/skins/legacy/config.rasi"
+size = 181
+
+[assets.image]
+digest = "sha256:fbd2aca2cc7fc874d41e1c1e50a4c547ea615e7f9dd13214ea07c70a09ee3e1d"
+kind = "preview"
+path = "showcase/image.png"
+size = 881324
+
+[assets.image-3]
+digest = "sha256:df9952a2db3dfb0028661f85ed5aaf614850a882193882eab1cab45b747853cc"
+kind = "preview"
+path = "showcase/image-3.png"
+size = 3403106
+
+[assets.image-5]
+digest = "sha256:2f1b94fdbd645d97a59090890ed6dacc76d1030ac052e3522cb4e756c9821205"
+kind = "preview"
+path = "showcase/image-5.png"
+size = 1651967
+
+[assets.style]
+digest = "sha256:40fe6f6d59028c57a609c6efec7daa0aac4d680189183fde9e81de221206939e"
+kind = "fragment"
+path = ".config/waybar/style.css"
+size = 65
+
+[assets.style-2]
+digest = "sha256:1300a3c04cca2d3e7b1d24404250e8d1bcca4cdfbfa3f199d5394f59aca0aeb1"
+kind = "fragment"
+path = ".config/swaync/style.css"
+size = 65
+
+[assets.style-3]
+digest = "sha256:849290e672ba61e63fda0af765e114de10b0781071441fc85f30ddddb5cab25b"
+kind = "fragment"
+path = ".config/wlogout/style.css"
+size = 66

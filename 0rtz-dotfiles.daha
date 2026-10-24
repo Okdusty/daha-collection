@@ -1,0 +1,303 @@
+# Drafted by `daha-cli import` from https://github.com/0rtz/dotfiles.git at 4373c90582b171ba76f2b5953ef7084aaf0a178d.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 1 binds settings, 1 cursor settings, 1 dwindle settings, 2 ecosystem settings, 1 general settings, 1 group settings, 5 input settings, 1 misc settings, 4 hl.animation calls, 43 hl.bind calls, 13 hl.env calls, 2 hl.layer_rule calls, 1 hl.on calls, 9 hl.window_rule calls, 2 hl.workspace_rule calls (not theme, or animations, which aren't taken from Lua yet)
+#   left out: hyprland: 11 parts of its Lua need running to read (conf.workspaces:30: a call to move_to_workspace isn't run, ...)
+#   left out: waybar: its config (modules, layout) isn't imported: that's a desktop, not a theme
+#   left out: alacritty: desktop/.config/alacritty/themes/github_dark_high_contrast.toml is added at the end of alacritty.toml: a table the user has too would be defined twice; review
+#   left out: dunst: 48 settings that aren't its theme
+#   left out: hyprlock: found desktop/.config/hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+#   left out: sway: found desktop/.config/sway/config, but the importer doesn't read sway yet
+
+daha = 1
+
+[pack]
+authors = [ "0rtz" ]
+description = "Taken from 0rtz/dotfiles at 4373c90582b1, referenced there and not copied: only what themes an app.\n\n- hyprland: desktop/.config/hypr/hyprland.lua and 5 module(s) it requires: 22 settings (read from its Lua, not run)\n- waybar: desktop/.config/waybar/style.css (the whole style)\n- rofi: desktop/.config/rofi/theme.rasi (its theme)\n- alacritty: desktop/.config/alacritty/themes/github_dark_high_contrast.toml (a colour theme it imports)\n- dunst: desktop/.config/dunst/dunstrc: 18 settings\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.0rtz-dotfiles"
+license = "MIT"
+name = "0rtz's dotfiles"
+summary = "0rtz's rice: its look for hyprland, waybar, rofi, alacritty and dunst"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "4373c90582b171ba76f2b5953ef7084aaf0a178d"
+ref = "main"
+repo = "https://github.com/0rtz/dotfiles.git"
+
+[[apps.alacritty.ops]]
+fragment = "github-dark-high-contrast"
+priority = 70
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "transparency" ]
+priority = 50
+set = 0
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "padding" ]
+priority = 50
+set = 16
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "horizontal_padding" ]
+priority = 50
+set = 20
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "frame_width" ]
+priority = 50
+set = 2
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "gap_size" ]
+priority = 50
+set = 8
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "corner_radius" ]
+priority = 50
+set = 12
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "separator_color" ]
+priority = 80
+set = "frame"
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "frame_color" ]
+priority = 80
+set = "\"#89b4fa\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "highlight" ]
+priority = 80
+set = "\"#89b4fa\""
+
+[[apps.dunst.ops]]
+group = "font"
+key = [ "global", "font" ]
+priority = 60
+set = "NotoSans Nerd Font 17"
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "icon_theme" ]
+priority = 50
+set = "\"breeze, Adwaita\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "background" ]
+priority = 80
+set = "\"#1e1e2ee6\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "foreground" ]
+priority = 80
+set = "\"#cdd6f4\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "background" ]
+priority = 80
+set = "\"#1e1e2ee6\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "foreground" ]
+priority = 80
+set = "\"#cdd6f4\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "background" ]
+priority = 80
+set = "\"#1e1e2ee6\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "foreground" ]
+priority = 80
+set = "\"#cdd6f4\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "frame_color" ]
+priority = 80
+set = "\"#fab387\""
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "group", "col", "border_active" ]
+priority = 80
+set = "rgb(eba0ac)"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "group", "col", "border_inactive" ]
+priority = 80
+set = "rgb(1e1e2e)"
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "gaps_in" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "gaps_out" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "indicator_height" ]
+priority = 30
+set = 4
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "height" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "rounding" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "render_titles" ]
+priority = 30
+set = false
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "round_only_edges" ]
+priority = 30
+set = false
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "group", "groupbar", "col", "active" ]
+priority = 80
+set = "rgb(eba0ac)"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "group", "groupbar", "col", "inactive" ]
+priority = 80
+set = "rgb(1e1e2e)"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 0
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 0
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col", "active_border" ]
+priority = 80
+set = "rgb(eba0ac)"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col", "inactive_border" ]
+priority = 80
+set = "rgb(1e1e2e)"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 0
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding_power" ]
+priority = 60
+set = 0
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 4
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_special" ]
+priority = 50
+set = "0.1"
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.rofi.ops]]
+fragment = "theme"
+priority = 70
+
+[[apps.waybar.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[assets.github-dark-high-contrast]
+digest = "sha256:3c04deb94bae4463fe6c1ce70b8d0b4346849e6c192023cfc9c04b8e129ed984"
+kind = "fragment"
+path = "desktop/.config/alacritty/themes/github_dark_high_contrast.toml"
+size = 599
+
+[assets.style]
+digest = "sha256:528c9b59a61fa304a4ccbfd0f7f8610620552da985d8c30867e5a6fe3ec96b30"
+kind = "fragment"
+path = "desktop/.config/waybar/style.css"
+size = 2854
+
+[assets.theme]
+digest = "sha256:16311d690807fbf9da683852c1971ae55742295534786ef214a84e2b4845cabc"
+kind = "fragment"
+path = "desktop/.config/rofi/theme.rasi"
+size = 4372

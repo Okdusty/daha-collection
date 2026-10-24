@@ -1,0 +1,416 @@
+# Drafted by `daha-cli import` from https://github.com/chadsr/dotfiles.git at e0a6eca15e47cea83f2611fad1704c46c2c85f42.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 4 cursor settings, 1 dwindle settings, 3 ecosystem settings, 2 general settings, 5 input settings, 1 master settings, 1 misc settings, 1 xwayland settings, 8 hl.animation calls, 90 hl.bind calls, 4 hl.curve calls, 5 hl.env calls, 2 hl.gesture calls, 6 hl.layer_rule calls, 2 hl.monitor calls, 1 hl.on calls, 5 hl.permission calls, 13 hl.window_rule calls (not theme, or animations, which aren't taken from Lua yet)
+#   left out: hyprland: 3 parts of its Lua need running to read (themes/theme:1: require("themes.catppuccin-mocha"): not in the repository, ...)
+#   left out: waybar: its style @imports other files, which won't be next to it: review the colours
+#   left out: waybar: its config (modules, layout) isn't imported: that's a desktop, not a theme
+#   left out: btop: its theme catppuccin_mocha.theme isn't in their repository (btop's own themes aren't packed)
+#   left out: fuzzel: 13 settings that aren't its theme
+#   left out: dunst: 12 settings that aren't its theme
+#   left out: alacritty: found alacritty/.config/alacritty/alacritty.toml, but the importer doesn't read alacritty yet
+#   left out: ghostty: found ghostty/.config/ghostty/config, but the importer doesn't read ghostty yet
+#   left out: gtk3: found gtk/.config/gtk-3.0/settings.ini, but the importer doesn't read gtk3 yet
+#   left out: gtk4: found gtk/.config/gtk-4.0/settings.ini, but the importer doesn't read gtk4 yet
+#   left out: hyprlock: found hyprland/.config/hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+#   left out: mako: found mako/.config/mako/config, but the importer doesn't read mako yet
+#   left out: qt6ct: found qt/.config/qt6ct/qt6ct.conf, but the importer doesn't read qt6ct yet
+#   left out: sway: found sway/.config/sway/config, but the importer doesn't read sway yet
+
+daha = 1
+
+[pack]
+authors = [ "chadsr" ]
+description = "Taken from chadsr/dotfiles at e0a6eca15e47, referenced there and not copied: only what themes an app.\n\n- hyprland: hyprland/.config/hypr/hyprland.lua and 7 module(s) it requires: 22 settings (read from its Lua, not run)\n- waybar: waybar/.config/waybar/style.css (the whole style)\n- cava: cava/.config/cava/config: 9 settings\n- fuzzel: fuzzel/.config/fuzzel/fuzzel.ini: 9 settings\n- dunst: dunst/.config/dunst/dunstrc: 13 settings\n- swaync: swaync/.config/swaync/style.css (the whole style)\n- wlogout: wlogout/.config/wlogout/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.chadsr-dotfiles"
+license = "MIT"
+name = "chadsr's dotfiles"
+preview = [ "hypr" ]
+summary = "chadsr's rice: its look for hyprland, waybar, cava, fuzzel, dunst, swaync and wlogout"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "e0a6eca15e47cea83f2611fad1704c46c2c85f42"
+ref = "main"
+repo = "https://github.com/chadsr/dotfiles.git"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient" ]
+priority = 80
+set = 1
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_1" ]
+priority = 80
+set = "'#94e2d5'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_2" ]
+priority = 80
+set = "'#89dceb'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_3" ]
+priority = 80
+set = "'#74c7ec'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_4" ]
+priority = 80
+set = "'#89b4fa'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_5" ]
+priority = 80
+set = "'#cba6f7'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_6" ]
+priority = 80
+set = "'#f5c2e7'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_7" ]
+priority = 80
+set = "'#eba0ac'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_8" ]
+priority = 80
+set = "'#f38ba8'"
+
+[[apps.dunst.ops]]
+group = "font"
+key = [ "global", "font" ]
+priority = 60
+set = "Hack Nerd Font Mono 10"
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "frame_color" ]
+priority = 80
+set = "\"#89b4fa\""
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "frame_width" ]
+priority = 50
+set = 2
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "separator_color" ]
+priority = 80
+set = "frame"
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "gap_size" ]
+priority = 50
+set = 8
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "padding" ]
+priority = 50
+set = 8
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "background" ]
+priority = 80
+set = "\"#1e1e2e\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "foreground" ]
+priority = 80
+set = "\"#cdd6f4\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "background" ]
+priority = 80
+set = "\"#1e1e2e\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "foreground" ]
+priority = 80
+set = "\"#cdd6f4\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "background" ]
+priority = 80
+set = "\"#1e1e2e\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "foreground" ]
+priority = 80
+set = "\"#cdd6f4\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "frame_color" ]
+priority = 80
+set = "\"#fab387\""
+
+[[apps.fuzzel.ops]]
+group = "colors"
+key = [ "colors", "background" ]
+priority = 80
+set = "1e1e2edd"
+
+[[apps.fuzzel.ops]]
+group = "colors"
+key = [ "colors", "text" ]
+priority = 80
+set = "cdd6f4ff"
+
+[[apps.fuzzel.ops]]
+group = "colors"
+key = [ "colors", "match" ]
+priority = 80
+set = "cba6f7ff"
+
+[[apps.fuzzel.ops]]
+group = "colors"
+key = [ "colors", "selection" ]
+priority = 80
+set = "585b70ff"
+
+[[apps.fuzzel.ops]]
+group = "colors"
+key = [ "colors", "selection-match" ]
+priority = 80
+set = "cba6f7ff"
+
+[[apps.fuzzel.ops]]
+group = "colors"
+key = [ "colors", "selection-text" ]
+priority = 80
+set = "cdd6f4ff"
+
+[[apps.fuzzel.ops]]
+group = "colors"
+key = [ "colors", "border" ]
+priority = 80
+set = "b4befeff"
+
+[[apps.fuzzel.ops]]
+group = "spacing"
+key = [ "border", "radius" ]
+priority = 50
+set = 0
+
+[[apps.fuzzel.ops]]
+group = "spacing"
+key = [ "border", "width" ]
+priority = 50
+set = 2
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_splash_rendering" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_special" ]
+priority = 50
+set = "0.3"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "special" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 4
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 8
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col", "active_border" ]
+priority = 80
+
+    [apps.hyprland.ops.set]
+    angle = 45
+    colors = []
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col", "inactive_border" ]
+priority = 80
+
+    [apps.hyprland.ops.set]
+    angle = 45
+    colors = []
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "group", "col", "border_active" ]
+priority = 80
+
+    [apps.hyprland.ops.set]
+    angle = 45
+    colors = []
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "group", "col", "border_inactive" ]
+priority = 80
+
+    [apps.hyprland.ops.set]
+    angle = 45
+    colors = []
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "group", "col", "border_locked_active" ]
+priority = 80
+
+    [apps.hyprland.ops.set]
+    angle = 45
+    colors = []
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "group", "col", "border_locked_inactive" ]
+priority = 80
+
+    [apps.hyprland.ops.set]
+    angle = 45
+    colors = []
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 0
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 6
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 3
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "new_optimizations" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "ignore_opacity" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "xray" ]
+priority = 50
+set = true
+
+[[apps.swaync.ops]]
+fragment = "style-2"
+priority = 70
+target = "style"
+
+[[apps.waybar.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[[apps.wlogout.ops]]
+fragment = "style-3"
+priority = 70
+target = "style"
+
+[assets.hypr]
+digest = "sha256:d9c68611e8b967e37ba0ea8fa4484c463440b4fc092d04c9234b514763d9472a"
+kind = "preview"
+path = ".github/assets/hypr.png"
+size = 2691656
+
+[assets.style]
+digest = "sha256:4c16c04e6ed8b85822d1b96c3b3a003b11b49e0cd9270c3b8c75ffa2d33f7671"
+kind = "fragment"
+path = "waybar/.config/waybar/style.css"
+size = 4180
+
+[assets.style-2]
+digest = "sha256:7f9ee10ccc34943f297adcd657fbd3b6931048a13a31755eb52c0bac024c2800"
+kind = "fragment"
+path = "swaync/.config/swaync/style.css"
+size = 5467
+
+[assets.style-3]
+digest = "sha256:3474b3f10d501cd8799f2663bc922dadda042b7c0ecd736f9d6d9654e84fbce0"
+kind = "fragment"
+path = "wlogout/.config/wlogout/style.css"
+size = 1212

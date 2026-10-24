@@ -1,0 +1,331 @@
+# Drafted by `daha-cli import` from https://github.com/hakuimaku/hakuspace.git at d9d25fa4c1c195de1dcaba696716197142a10fd3.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 2 cursor settings, 2 dwindle settings, 8 general settings, 8 input settings, 2 master settings, 4 misc settings, 2 scrolling settings, 27 hl.animation calls, 67 hl.bind calls, 1 hl.curve calls, 1 hl.device calls, 21 hl.env calls, 2 hl.gesture calls, 3 hl.layer_rule calls, 1 hl.monitor calls, 1 hl.on calls, 3 hl.window_rule calls, 2 hl.workspace_rule calls (not theme, or animations, which aren't taken from Lua yet)
+#   left out: hyprland: 5 parts of its Lua need running to read (config/config:12: a if block isn't read (it would need running), ...)
+#   left out: kitty: 5 keyboard shortcuts, 9 other settings
+#   left out: rofi: its theme "~/.local/state/hakuspace/rofi-theme.rasi" isn't in their repository
+#   left out: cava: 4 settings that aren't its theme
+#   left out: swaync: its style @imports other files, which won't be next to it: review it
+#   left out: fastfetch: found src/home/.config/fastfetch/config.jsonc, but the importer doesn't read fastfetch yet
+#   left out: hyprlock: found src/home/.config/hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+
+daha = 1
+
+[pack]
+authors = [ "hakuimaku" ]
+description = "Taken from hakuimaku/hakuspace at d9d25fa4c1c1, referenced there and not copied: only what themes an app.\n\n- hyprland: src/home/.config/hypr/hyprland.lua and 7 module(s) it requires: 25 settings (read from its Lua, not run)\n- kitty: src/home/.config/kitty/kitty.conf: 20 settings\n- btop: src/home/.config/btop/themes/HakuBtop.theme (its theme, installed as btop's \"daha\" theme)\n- cava: src/home/.config/cava/config: 1 settings\n- swaync: src/home/.config/swaync/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.hakuimaku-hakuspace"
+license = "MIT"
+name = "hakuspace"
+summary = "hakuimaku's rice: its look for hyprland, kitty, btop, cava and swaync"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "d9d25fa4c1c195de1dcaba696716197142a10fd3"
+ref = "main"
+repo = "https://github.com/hakuimaku/hakuspace.git"
+
+[[apps.btop.ops]]
+fragment = "hakubtop"
+priority = 70
+target = "theme"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "foreground" ]
+priority = 80
+set = "white"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 10
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 16
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col", "inactive_border" ]
+priority = 80
+set = "rgba(ffffff00)"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 12
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding_power" ]
+priority = 60
+set = 4
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "active_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "inactive_opacity" ]
+priority = 50
+set = "0.9"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "range" ]
+priority = 50
+set = 24
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "render_power" ]
+priority = 50
+set = 6
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "offset" ]
+priority = 50
+set = [ 0, 0 ]
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "decoration", "shadow", "color" ]
+priority = 80
+set = "rgba(000000ee)"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 24
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "brightness" ]
+priority = 50
+set = "0.5"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 3
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "vibrancy" ]
+priority = 50
+set = 2
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "contrast" ]
+priority = 50
+set = "1.4"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "noise" ]
+priority = 50
+set = "0.05"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "special" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "input_methods" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "italic_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_italic_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color0"
+priority = 80
+set = "#000000"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color8"
+priority = 80
+set = "#282828"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color1"
+priority = 80
+set = "#cc241d"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color9"
+priority = 80
+set = "#fb4934"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color2"
+priority = 80
+set = "#98971a"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color10"
+priority = 80
+set = "#b8bb26"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color3"
+priority = 80
+set = "#d79921"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color11"
+priority = 80
+set = "#fabd2f"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color4"
+priority = 80
+set = "#458588"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color12"
+priority = 80
+set = "#83a598"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color5"
+priority = 80
+set = "#b16286"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color13"
+priority = 80
+set = "#d3869b"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color6"
+priority = 80
+set = "#689d6a"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color14"
+priority = 80
+set = "#8ec07c"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "background_opacity"
+priority = 50
+set = "0.9"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_margin_width"
+priority = 50
+set = 20
+
+[[apps.kitty.ops]]
+group = "window"
+key = "cursor_shape"
+priority = 50
+set = "beam"
+
+[[apps.swaync.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[assets.hakubtop]
+digest = "sha256:d268f433a034963ea149ae36f8e1104471e0974c764f9b082505e0883db037b9"
+kind = "fragment"
+path = "src/home/.config/btop/themes/HakuBtop.theme"
+size = 329
+
+[assets.style]
+digest = "sha256:4907b3c0e8cb6dd54abeb27dd6fce2e944fb6fcaa7e548f826dfb7f6de37e5dc"
+kind = "fragment"
+path = "src/home/.config/swaync/style.css"
+size = 7501

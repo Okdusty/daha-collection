@@ -1,0 +1,62 @@
+# Drafted by `daha-cli import` from https://github.com/shadowdevforge/CelestialShade-Config.git at 87160350987b89cbc3a064fab036368af1159d5e.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: waybar: its style @imports other files, which won't be next to it: review the colours
+#   left out: waybar: its config (modules, layout) isn't imported: that's a desktop, not a theme
+#   left out: rofi: its theme @imports other files: review it
+#   left out: wlogout: its style @imports other files, which won't be next to it: review it
+#   left out: ghostty: found config/ghostty/config, but the importer doesn't read ghostty yet
+#   left out: mako: found config/mako/config, but the importer doesn't read mako yet
+
+daha = 1
+
+[pack]
+authors = [ "shadowdevforge" ]
+description = "Taken from shadowdevforge/CelestialShade-Config at 87160350987b, referenced there and not copied: only what themes an app.\n\n- waybar: config/waybar/style.css (the whole style)\n- rofi: config/rofi/colors.rasi (its theme)\n- wlogout: config/wlogout/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+id = "com.github.okdusty.shadowdevforge-celestialshade-config"
+license = "MIT"
+name = "CelestialShade-Config"
+summary = "shadowdevforge's rice: its look for waybar, rofi and wlogout"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "87160350987b89cbc3a064fab036368af1159d5e"
+ref = "main"
+repo = "https://github.com/shadowdevforge/CelestialShade-Config.git"
+
+[[apps.rofi.ops]]
+fragment = "colors"
+priority = 70
+
+[[apps.waybar.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[[apps.wlogout.ops]]
+fragment = "style-2"
+priority = 70
+target = "style"
+
+[assets.colors]
+digest = "sha256:2ff289609cc7e4e232ca4449e2d8069eae191d5a9452edb6d239d3aa0faeaffb"
+kind = "fragment"
+path = "config/rofi/colors.rasi"
+size = 551
+
+[assets.style]
+digest = "sha256:706f293324f6596aa4f0d2705433e2653f768730f31240f6cc6b83c4ae2cc05d"
+kind = "fragment"
+path = "config/waybar/style.css"
+size = 5222
+
+[assets.style-2]
+digest = "sha256:9e579865782219e1b49a4cf3392f5c37bbf7c90ae31c39a2536dc8bfc959f7f0"
+kind = "fragment"
+path = "config/wlogout/style.css"
+size = 1188

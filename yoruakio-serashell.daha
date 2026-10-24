@@ -1,0 +1,448 @@
+# Drafted by `daha-cli import` from https://github.com/YoruAkio/Serashell.git at 917246cd1ef24d57586855f8893f8f245a170725.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 1 dwindle settings, 3 general settings, 7 input settings, 2 master settings, 1 misc settings, 24 hl.bind calls, 1 hl.curve calls, 6 hl.env calls, 2 hl.monitor calls, 1 hl.on calls, 2 hl.window_rule calls (not theme, or animations, which aren't taken from Lua yet)
+#   left out: hyprland: 13 parts of its Lua need running to read (config/monitors:4: a for block isn't read (it would need running), ...)
+#   left out: kitty: 11 keyboard shortcuts, 4 other settings
+#   left out: fuzzel: 7 settings that aren't its theme
+#   left out: dunst: 49 settings that aren't its theme
+#   left out: fastfetch: found config/fastfetch/config.jsonc, but the importer doesn't read fastfetch yet
+
+daha = 1
+
+[pack]
+authors = [ "YoruAkio" ]
+description = "Taken from YoruAkio/Serashell at 917246cd1ef2, referenced there and not copied: only what themes an app.\n\n- hyprland: config/hypr/hyprland.lua and 9 module(s) it requires: 11 settings (read from its Lua, not run)\n- kitty: config/kitty/kitty.conf and 1 included file(s): 35 settings\n- fuzzel: config/fuzzel/fuzzel.ini: 2 settings\n- dunst: config/dunst/dunstrc: 21 settings\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.yoruakio-serashell"
+license = "MIT"
+name = "Serashell"
+summary = "YoruAkio's rice: its look for hyprland, kitty, fuzzel and dunst"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "917246cd1ef24d57586855f8893f8f245a170725"
+ref = "main"
+repo = "https://github.com/YoruAkio/Serashell.git"
+
+[requires]
+fonts = [ "JetBrains Mono Nerd Font" ]
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "gap_size" ]
+priority = 50
+set = 10
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "padding" ]
+priority = 50
+set = 14
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "horizontal_padding" ]
+priority = 50
+set = 16
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "text_icon_padding" ]
+priority = 80
+set = 12
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "frame_width" ]
+priority = 50
+set = 2
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "frame_color" ]
+priority = 80
+set = "\"#2d4f67\""
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "corner_radius" ]
+priority = 50
+set = 14
+
+[[apps.dunst.ops]]
+group = "font"
+key = [ "global", "font" ]
+priority = 60
+set = "SF Pro Display Medium 11"
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "icon_theme" ]
+priority = 50
+set = "Adwaita"
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "background" ]
+priority = 80
+set = "\"#1f1f28e6\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "foreground" ]
+priority = 80
+set = "\"#a6a69c\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "frame_color" ]
+priority = 80
+set = "\"#54546d\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "highlight" ]
+priority = 80
+set = "\"#727169\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "background" ]
+priority = 80
+set = "\"#1f1f28f2\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "foreground" ]
+priority = 80
+set = "\"#dcd7ba\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "frame_color" ]
+priority = 80
+set = "\"#2d4f67\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "highlight" ]
+priority = 80
+set = "\"#7e9cd8\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "background" ]
+priority = 80
+set = "\"#1f1f28\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "foreground" ]
+priority = 80
+set = "\"#e82424\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "frame_color" ]
+priority = 80
+set = "\"#c34043\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "highlight" ]
+priority = 80
+set = "\"#e82424\""
+
+[[apps.fuzzel.ops]]
+group = "spacing"
+key = [ "border", "radius" ]
+priority = 50
+set = 17
+
+[[apps.fuzzel.ops]]
+group = "spacing"
+key = [ "border", "width" ]
+priority = 50
+set = 1
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 5
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 8
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 14
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding_power" ]
+priority = 60
+set = 5
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "active_opacity" ]
+priority = 50
+set = 1
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "JetBrains Mono Nerd Font"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = "14.0"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "cursor_shape"
+priority = 50
+set = "beam"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_margin_width"
+priority = 50
+set = 8
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "foreground"
+priority = 80
+set = "#B1A8A2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "background"
+priority = 80
+set = "#161617"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_foreground"
+priority = 80
+set = "#161617"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_background"
+priority = 80
+set = "#B1A8A2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor"
+priority = 80
+set = "#B1A8A2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor_text_color"
+priority = 80
+set = "#161617"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "url_color"
+priority = 80
+set = "#8AA7D0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_border_color"
+priority = 80
+set = "#C5C6D0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_border_color"
+priority = 80
+set = "#767578"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "bell_border_color"
+priority = 80
+set = "#D085C3"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_tab_foreground"
+priority = 80
+set = "#3E4048"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_tab_background"
+priority = 80
+set = "#C5C6D0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_tab_foreground"
+priority = 80
+set = "#B1A8A2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_tab_background"
+priority = 80
+set = "#767578"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "tab_bar_background"
+priority = 80
+set = "#161617"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color0"
+priority = 80
+set = "#161617"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color8"
+priority = 80
+set = "#767578"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color1"
+priority = 80
+set = "#D085C3"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color9"
+priority = 80
+set = "#E0ACD4"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color2"
+priority = 80
+set = "#82C4C5"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color10"
+priority = 80
+set = "#9FDDDE"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color3"
+priority = 80
+set = "#E1A6B2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color11"
+priority = 80
+set = "#F6C1C8"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color4"
+priority = 80
+set = "#8AA7D0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color12"
+priority = 80
+set = "#ABC8F3"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color5"
+priority = 80
+set = "#B09FC9"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color13"
+priority = 80
+set = "#D2C1EA"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color6"
+priority = 80
+set = "#8CCBE5"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color14"
+priority = 80
+set = "#BCEBFF"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color7"
+priority = 80
+set = "#B1A8A2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color15"
+priority = 80
+set = "#E7E4E8"

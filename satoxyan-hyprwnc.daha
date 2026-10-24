@@ -1,0 +1,405 @@
+# Drafted by `daha-cli import` from https://github.com/Satoxyan/HyprWNC.git at 2c0cf55636b1e204ce87238a5af11a8068ccab95.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 127 bind, 4 binde, 2 bindel, 1 bindir, 17 bindl, 4 bindle, 2 bindm, 2 bindr, 1 binds settings, 3 dwindle settings, 8 env, 16 exec-once, 4 general settings, 8 gestures settings, 10 input settings, 44 layerrule, 9 misc settings, 1 monitor, 18 plugin settings, 47 windowrulev2 (not theme: binds, startup commands, monitors, input and the like)
+#   left out: kitty: 9 keyboard shortcuts, 4 other settings
+#   left out: cava: 9 settings that aren't its theme
+#   left out: foot: 24 settings that aren't its theme
+#   left out: fuzzel: 6 settings that aren't its theme
+#   left out: hyprlock: found .config/hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+#   left out: qt5ct: found .config/qt5ct/qt5ct.conf, but the importer doesn't read qt5ct yet
+#   left out: qt6ct: found .config/qt6ct/qt6ct.conf, but the importer doesn't read qt6ct yet
+
+daha = 1
+
+[pack]
+authors = [ "Satoxyan" ]
+description = "Taken from Satoxyan/HyprWNC at 2c0cf55636b1, referenced there and not copied: only what themes an app.\n\n- hyprland: .config/hypr/hyprland.conf and 11 file(s) it sources: 31 settings, 25 animation lines\n- kitty: .config/kitty/kitty.conf: 7 settings\n- cava: .config/cava/config: 11 settings\n- foot: .config/foot/foot.ini: 1 settings\n- fuzzel: .config/fuzzel/fuzzel.ini: 2 settings\n- wlogout: .config/wlogout/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.satoxyan-hyprwnc"
+license = "GPL-3.0"
+name = "HyprWNC"
+preview = [ "sample" ]
+summary = "Satoxyan's rice: its look for hyprland, kitty, cava, foot, fuzzel and wlogout"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "2c0cf55636b1e204ce87238a5af11a8068ccab95"
+ref = "main"
+repo = "https://github.com/Satoxyan/HyprWNC.git"
+
+[requires]
+fonts = [ "SpaceMono Nerd Font" ]
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "foreground" ]
+priority = 80
+set = "'#A6C8FF'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient" ]
+priority = 80
+set = 0
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_count" ]
+priority = 80
+set = 8
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_1" ]
+priority = 80
+set = "'#030508'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_2" ]
+priority = 80
+set = "'#2A3859'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_3" ]
+priority = 80
+set = "'#324166'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_4" ]
+priority = 80
+set = "'#11606B'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_5" ]
+priority = 80
+set = "'#BCADBB'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_6" ]
+priority = 80
+set = "'#2B7F48'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_7" ]
+priority = 80
+set = "'#16808F'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_8" ]
+priority = 80
+set = "'#BCADBB'"
+
+[[apps.foot.ops]]
+group = "spacing"
+key = [ "cursor", "style" ]
+priority = 50
+set = "beam"
+
+[[apps.fuzzel.ops]]
+group = "spacing"
+key = [ "border", "radius" ]
+priority = 50
+set = 17
+
+[[apps.fuzzel.ops]]
+group = "spacing"
+key = [ "border", "width" ]
+priority = 50
+set = 1
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 4
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 5
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_workspaces" ]
+priority = 60
+set = 50
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 1
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col.active_border" ]
+priority = 80
+set = "rgba(F7DCDE39)"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col.inactive_border" ]
+priority = 80
+set = "rgba(A58A8D30)"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 20
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "xray" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "special" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "new_optimizations" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 14
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 4
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "brightness" ]
+priority = 50
+set = 1
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "noise" ]
+priority = 50
+set = "0.01"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "contrast" ]
+priority = 50
+set = 1
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "popups" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "popups_ignorealpha" ]
+priority = 50
+set = "0.6"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "ignore_window" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "range" ]
+priority = 50
+set = 20
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "offset" ]
+priority = 50
+set = "0 2"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "render_power" ]
+priority = 50
+set = 4
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "decoration", "shadow", "color" ]
+priority = 80
+set = "rgba(0000002A)"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_inactive" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_strength" ]
+priority = 50
+set = "0.1"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_special" ]
+priority = 50
+set = 0
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "misc", "background_color" ]
+priority = 80
+set = "rgba(1D1011FF)"
+
+[[apps.hyprland.ops]]
+add = [
+    "linear, 0, 0, 1, 1",
+    "md3_standard, 0.2, 0, 0, 1",
+    "md3_decel, 0.05, 0.7, 0.1, 1",
+    "md3_accel, 0.3, 0, 0.8, 0.15",
+    "overshot, 0.05, 0.9, 0.1, 1.1",
+    "crazyshot, 0.1, 1.5, 0.76, 0.92",
+    "hyprnostretch, 0.05, 0.9, 0.1, 1.0",
+    "menu_decel, 0.1, 1, 0, 1",
+    "menu_accel, 0.38, 0.04, 1, 0.07",
+    "easeInOutCirc, 0.85, 0, 0.15, 1",
+    "easeOutCirc, 0, 0.55, 0.45, 1",
+    "easeOutExpo, 0.16, 1, 0.3, 1",
+    "softAcDecel, 0.26, 0.26, 0.15, 1",
+    "md2, 0.4, 0, 0.2, 1"
+]
+group = "animations"
+key = "bezier"
+priority = 40
+
+[[apps.hyprland.ops]]
+add = [
+    "windows, 1, 3, md3_decel, popin 60%",
+    "windowsIn, 1, 3, md3_decel, popin 60%",
+    "windowsOut, 1, 3, md3_accel, popin 60%",
+    "border, 1, 10, default",
+    "fade, 1, 3, md3_decel",
+    "layersIn, 1, 3, menu_decel, slide",
+    "layersOut, 1, 1.6, menu_accel",
+    "fadeLayersIn, 1, 2, menu_decel",
+    "fadeLayersOut, 1, 0.5, menu_accel",
+    "workspaces, 1, 7, menu_decel, slide",
+    "specialWorkspace, 1, 3, md3_decel, slidevert"
+]
+group = "animations"
+key = "animation"
+priority = 40
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "SpaceMono Nerd Font"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = "11.0"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "italic_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_italic_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "cursor_shape"
+priority = 50
+set = "block"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_margin_width"
+priority = 50
+set = "21.75"
+
+[[apps.wlogout.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[assets.sample]
+digest = "sha256:180ec39224f6c4e150c036308945392a48992be9dd1bae1a7a7dbd0334d81ef3"
+kind = "preview"
+path = "assets/sample.gif"
+size = 1638315
+
+[assets.style]
+digest = "sha256:43250cfb80acdfad192ae97f63240098e2c7b0fbd02d3609f837e3df617ead59"
+kind = "fragment"
+path = ".config/wlogout/style.css"
+size = 437

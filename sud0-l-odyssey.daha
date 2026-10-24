@@ -1,0 +1,108 @@
+# Drafted by `daha-cli import` from https://github.com/sud0-L/odyssey.git at 3738877a7d1c291ba482d1e494724d7b9202eae9.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 10 parts of its Lua need running to read (config/hypr/hyprland.lua:4: require("config.monitors"): not in the repository, ...)
+#   left out: kitty: 6 keyboard shortcuts, 9 other settings
+#   left out: fastfetch: found config/fastfetch/config.jsonc, but the importer doesn't read fastfetch yet
+
+daha = 1
+
+[pack]
+authors = [ "sud0-L" ]
+description = "Taken from sud0-L/odyssey at 3738877a7d1c, referenced there and not copied: only what themes an app.\n\n- hyprland: config/hypr/hyprland.lua: 0 settings (read from its Lua, not run)\n- kitty: config/kitty/kitty.conf: 13 settings\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+id = "com.github.okdusty.sud0-l-odyssey"
+license = "GPL-3.0"
+name = "odyssey"
+summary = "sud0-L's rice: its look for kitty"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "3738877a7d1c291ba482d1e494724d7b9202eae9"
+ref = "main"
+repo = "https://github.com/sud0-L/odyssey.git"
+
+[requires]
+fonts = [ "JetBrainsMonoNerdFontMono" ]
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = "10.0"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_padding_width"
+priority = 50
+set = 12
+
+[[apps.kitty.ops]]
+group = "window"
+key = "background_opacity"
+priority = 50
+set = "1.0"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "hide_window_decorations"
+priority = 50
+set = "no"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "cursor_shape"
+priority = 50
+set = "block"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_edge"
+priority = 40
+set = "top"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_style"
+priority = 40
+set = "powerline"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_powerline_style"
+priority = 40
+set = "slanted"
+
+[[apps.kitty.ops]]
+group = "tabs"
+key = "tab_bar_align"
+priority = 40
+set = "left"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "JetBrainsMonoNerdFontMono"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "italic_font"
+priority = 60
+set = "auto"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "bold_italic_font"
+priority = 60
+set = "auto"

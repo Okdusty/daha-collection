@@ -1,0 +1,233 @@
+# Drafted by `daha-cli import` from https://github.com/zaeemali272/zenith.git at 74b03eb6bd9df961b4f450ad57ef055b7b8f3865.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: kitty: 13 keyboard shortcuts, 3 other settings
+
+daha = 1
+
+[pack]
+authors = [ "zaeemali272" ]
+description = "Taken from zaeemali272/zenith at 74b03eb6bd9d, referenced there and not copied: only what themes an app.\n\n- kitty: .config/kitty/kitty.conf and 1 included file(s): 31 settings\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+id = "com.github.okdusty.zaeemali272-zenith"
+license = "Unlicense"
+name = "zenith"
+preview = [ "2026-05-25-113908-hyprshot", "2026-05-25-113646-hyprshot", "2026-05-25-113837-hyprshot" ]
+summary = "zaeemali272's rice: its look for kitty"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "74b03eb6bd9df961b4f450ad57ef055b7b8f3865"
+ref = "main"
+repo = "https://github.com/zaeemali272/zenith.git"
+
+[requires]
+fonts = [ "JetBrains Mono Nerd Font" ]
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "foreground"
+priority = 80
+set = "#ebe1d4"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "background"
+priority = 80
+set = "#17130b"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_foreground"
+priority = 80
+set = "#f5e0bb"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_background"
+priority = 80
+set = "#52452a"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "url_color"
+priority = 80
+set = "#e9c16c"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor"
+priority = 80
+set = "#ebe1d4"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor_text_color"
+priority = 80
+set = "#17130b"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_tab_foreground"
+priority = 80
+set = "#ffdf9e"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_tab_background"
+priority = 80
+set = "#5b4300"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_tab_foreground"
+priority = 80
+set = "#d0c5b4"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_tab_background"
+priority = 80
+set = "#4d4639"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color0"
+priority = 80
+set = "#17130b"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color8"
+priority = 80
+set = "#4d4639"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color1"
+priority = 80
+set = "#ffb4ab"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color9"
+priority = 80
+set = "#ffb4ab"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color2"
+priority = 80
+set = "#a6e3a1"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color10"
+priority = 80
+set = "#a6e3a1"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color3"
+priority = 80
+set = "#f9e2af"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color11"
+priority = 80
+set = "#f9e2af"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color4"
+priority = 80
+set = "#e9c16c"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color12"
+priority = 80
+set = "#e9c16c"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color5"
+priority = 80
+set = "#d8c4a0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color13"
+priority = 80
+set = "#d8c4a0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color6"
+priority = 80
+set = "#b0cfa9"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color14"
+priority = 80
+set = "#b0cfa9"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color7"
+priority = 80
+set = "#d0c5b4"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color15"
+priority = 80
+set = "#ebe1d4"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "JetBrains Mono Nerd Font"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = "11.0"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "cursor_shape"
+priority = 50
+set = "beam"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_margin_width"
+priority = 50
+set = "21.75"
+
+[assets.2026-05-25-113646-hyprshot]
+digest = "sha256:f72518c09f568f94c46dc9a3471ab1b6f061ced65199a2679c38f64f430fba15"
+kind = "preview"
+path = "assets/2026-05-25-113646_hyprshot.png"
+size = 12184
+
+[assets.2026-05-25-113837-hyprshot]
+digest = "sha256:5eef9029b1cae8503e074faa30e73c921772ad897bed41bb836a20d5a9d6e7fe"
+kind = "preview"
+path = "assets/2026-05-25-113837_hyprshot.png"
+size = 1343566
+
+[assets.2026-05-25-113908-hyprshot]
+digest = "sha256:91ed4fd9dad2b5200e3119a14a1eeb440d54ac57ae723f48a866460532685b9a"
+kind = "preview"
+path = "assets/2026-05-25-113908_hyprshot.png"
+size = 1381952

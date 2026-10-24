@@ -1,0 +1,404 @@
+# Drafted by `daha-cli import` from https://github.com/switchToLinux/dotfiles.git at 8f38d0457a27da279037450a6bb77aa0175a9853.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 63 bind, 6 bindel, 4 bindl, 2 bindm, 2 dwindle settings, 19 env, 8 exec-once, 3 general settings, 3 gestures settings, 9 input settings, 1 master settings, 1 monitor, 9 windowrule, 1 xwayland settings (not theme: binds, startup commands, monitors, input and the like)
+#   left out: hyprpaper: its wallpaper /video/movies/sources/图片素材库/wallpaper/故宫博物院/wallpaper/4k_257544_爱上紫禁城-海棠.jpg isn't in their repository
+#   left out: rofi: its theme "fancy2" isn't in their repository
+#   left out: dunst: 47 settings that aren't its theme
+#   left out: hyprlock: found hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+#   left out: mako: found mako/config, but the importer doesn't read mako yet
+
+daha = 1
+
+[pack]
+authors = [ "switchToLinux" ]
+description = "Taken from switchToLinux/dotfiles at 8f38d0457a27, referenced there and not copied: only what themes an app.\n\n- hyprland: hypr/hyprland.conf and 12 file(s) it sources: 35 settings, 23 animation lines\n- dunst: dunst/dunstrc: 17 settings\n- wofi: wofi/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.switchtolinux-dotfiles"
+license = "GPL-3.0"
+name = "switchToLinux's dotfiles"
+preview = [ "i3wm-demo1", "hyprland-demo1" ]
+summary = "switchToLinux's rice: its look for hyprland, dunst and wofi"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "8f38d0457a27da279037450a6bb77aa0175a9853"
+ref = "main"
+repo = "https://github.com/switchToLinux/dotfiles.git"
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "transparency" ]
+priority = 50
+set = 0
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "padding" ]
+priority = 50
+set = 8
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "horizontal_padding" ]
+priority = 50
+set = 8
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "frame_width" ]
+priority = 50
+set = 3
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "frame_color" ]
+priority = 80
+set = "\"#000000\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "separator_color" ]
+priority = 80
+set = "frame"
+
+[[apps.dunst.ops]]
+group = "font"
+key = [ "global", "font" ]
+priority = 60
+set = "Museo Sans 10"
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "corner_radius" ]
+priority = 50
+set = 8
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "foreground" ]
+priority = 80
+set = "\"#ffd5cd\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "background" ]
+priority = 80
+set = "\"#121212\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "frame_color" ]
+priority = 80
+set = "\"#181A20\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "background" ]
+priority = 80
+set = "\"#121212\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "foreground" ]
+priority = 80
+set = "\"#ffd5cd\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "frame_color" ]
+priority = 80
+set = "\"#181A20\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "background" ]
+priority = 80
+set = "\"#121212\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "foreground" ]
+priority = 80
+set = "\"#ffd5cd\" #FDF1DB #f5bfd2 #ff8585   #ffdfd3  #fec8d8      #FDF1DB #8fbcbb"
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "frame_color" ]
+priority = 80
+set = "\"#181A20\""
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "group", "col.border_active" ]
+priority = 80
+set = "rgba(0D9500ff)"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "group", "col.border_inactive" ]
+priority = 80
+set = "rgba(FFFFFFFF)"
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "enabled" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "font_size" ]
+priority = 30
+set = 14
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "gradients" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "gaps_in" ]
+priority = 30
+set = 2
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "gaps_out" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "indicator_height" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "rounding" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "height" ]
+priority = 30
+set = 24
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "group", "groupbar", "col.active" ]
+priority = 80
+set = "rgba(19D600FF)"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "group", "groupbar", "col.inactive" ]
+priority = 80
+set = "rgba(383838FF)"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 4
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 6
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col.active_border" ]
+priority = 80
+set = "rgba(B3B3B3ee) rgba(696969ee) 45deg"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col.inactive_border" ]
+priority = 80
+set = "rgba(1E1D1D11)"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 12
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding_power" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "active_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "inactive_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "range" ]
+priority = 50
+set = 4
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "render_power" ]
+priority = 50
+set = 1
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "decoration", "shadow", "color" ]
+priority = 80
+set = "rgba(0E0E0Eee)"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 4
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 1
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "xray" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "vibrancy" ]
+priority = 50
+set = "0.1696"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "special" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "popups" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = "yes"
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = false
+
+[[apps.hyprland.ops]]
+add = [
+    "easeOutQuint,0.23,1,0.32,1",
+    "easeInOutCubic,0.65,0.05,0.36,1",
+    "linear,0,0,1,1",
+    "almostLinear,0.5,0.5,0.75,1.0",
+    "quick,0.15,0,0.1,1",
+    "bouncy, 0.6, -0.05, 0.01, 1.06"
+]
+group = "animations"
+key = "bezier"
+priority = 40
+
+[[apps.hyprland.ops]]
+add = [
+    "global, 1, 10, default",
+    "border, 1, 5.39, easeOutQuint",
+    "windows, 1, 10, bouncy, slide",
+    "windowsIn, 1, 4.1, easeOutQuint, popin 87%",
+    "windowsOut, 1, 1.49, linear, popin 87%",
+    "fadeIn, 1, 1.73, almostLinear",
+    "fadeOut, 1, 1.46, almostLinear",
+    "fade, 1, 3.03, quick",
+    "layers, 1, 3.81, easeOutQuint",
+    "layersIn, 1, 4, easeOutQuint, fade",
+    "layersOut, 1, 1.5, linear, fade",
+    "fadeSwitch, 1, 2, almostLinear",
+    "fadeLayersIn, 1, 1.79, almostLinear",
+    "fadeLayersOut, 1, 1.39, almostLinear",
+    "workspaces, 1, 1.94, almostLinear, fade",
+    "workspacesIn, 1, 1.21, almostLinear, fade",
+    "workspacesOut, 1, 1.94, almostLinear, fade"
+]
+group = "animations"
+key = "animation"
+priority = 40
+
+[[apps.wofi.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[assets.hyprland-demo1]
+digest = "sha256:ea7629ec8d05d550120426c0bc34f143cc383746344885c03ee1c7d8ce6973ed"
+kind = "preview"
+path = "previews/hyprland_demo1.jpeg"
+size = 264448
+
+[assets.i3wm-demo1]
+digest = "sha256:e52225af9ea3ea523a408147ea4c1fea152ffcaa932e3ea93f8109333335ae8d"
+kind = "preview"
+path = "previews/i3wm_demo1.jpg"
+size = 1061052
+
+[assets.style]
+digest = "sha256:970ac8b735ce772e3b6aafacd251807685e2101d1b43c9e36f501f357239af5a"
+kind = "fragment"
+path = "wofi/style.css"
+size = 1649

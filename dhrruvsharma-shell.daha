@@ -1,0 +1,446 @@
+# Drafted by `daha-cli import` from https://github.com/dhrruvsharma/shell.git at edef963c829482f4f4cbb20aa6e339024dc3ef2a.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 2 general settings, 2 gestures settings, 2 group settings, 9 input settings, 1 master settings, 5 scrolling settings, 16 hl.animation calls, 62 hl.bind calls, 6 hl.curve calls, 1 hl.device calls, 17 hl.env calls, 1 hl.gesture calls, 1 hl.layer_rule calls, 1 hl.monitor calls, 1 hl.on calls, 6 hl.window_rule calls (not theme, or animations, which aren't taken from Lua yet)
+#   left out: hyprland: 1 parts of its Lua need running to read (hypr/hyprland.lua:198: a for block isn't read (it would need running))
+#   left out: kitty: 13 keyboard shortcuts, 3 other settings
+#   left out: rofi: its theme @imports other files: review it
+#   left out: cava: 24 settings that aren't its theme
+
+daha = 1
+
+[pack]
+authors = [ "dhrruvsharma" ]
+description = "Taken from dhrruvsharma/shell at edef963c8294, referenced there and not copied: only what themes an app.\n\n- hyprland: hypr/hyprland.lua and 2 module(s) it requires: 25 settings (read from its Lua, not run)\n- kitty: kitty/kitty.conf and 1 included file(s): 26 settings\n- rofi: rofi/themes/hypr-matugen-dark.rasi (its theme)\n- cava: cava/config: 12 settings\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.dhrruvsharma-shell"
+license = "GPL-3.0"
+name = "shell"
+preview = [ "theme-wasteland", "theme-hud", "theme-terminal" ]
+summary = "dhrruvsharma's rice: its look for hyprland, kitty, rofi and cava"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "edef963c829482f4f4cbb20aa6e339024dc3ef2a"
+ref = "master"
+repo = "https://github.com/dhrruvsharma/shell.git"
+
+[requires]
+fonts = [ "JetBrains Mono Nerd Font" ]
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "background" ]
+priority = 80
+set = "'default'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "foreground" ]
+priority = 80
+set = "'#e7b6f0'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient" ]
+priority = 80
+set = 1
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_1" ]
+priority = 80
+set = "'#5f3869'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_2" ]
+priority = 80
+set = "'#e7b6f0'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_3" ]
+priority = 80
+set = "'#fbd7ff'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "horizontal_gradient" ]
+priority = 80
+set = 0
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "horizontal_gradient_color_1" ]
+priority = 80
+set = "'#5f3869'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "horizontal_gradient_color_2" ]
+priority = 80
+set = "'#e7b6f0'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "horizontal_gradient_color_3" ]
+priority = 80
+set = "'#fbd7ff'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "horizontal_gradient_color_4" ]
+priority = 80
+set = "'#e7b6f0'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "horizontal_gradient_color_5" ]
+priority = 80
+set = "'#5f3869'"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 5
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 20
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col", "active_border" ]
+priority = 80
+
+    [apps.hyprland.ops.set]
+    angle = 45
+    colors = [ "rgba(e9c16cff)", "rgba(b0cfaaff)" ]
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col", "inactive_border" ]
+priority = 80
+
+    [apps.hyprland.ops.set]
+    angle = 45
+    colors = [ "rgba(231f17ff)", "rgba(999080ff)" ]
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 35
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding_power" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "active_opacity" ]
+priority = 50
+set = "0.65"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "inactive_opacity" ]
+priority = 50
+set = "0.55"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "fullscreen_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "range" ]
+priority = 50
+set = 18
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "render_power" ]
+priority = 50
+set = 5
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "decoration", "shadow", "color" ]
+priority = 80
+set = "rgba(000000ff)"
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = -1
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "enabled" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "group", "groupbar", "gradients" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 12
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 4
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "ignore_opacity" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "new_optimizations" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "vibrancy" ]
+priority = 50
+set = "0.4"
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "background"
+priority = 80
+set = "#161217"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "foreground"
+priority = 80
+set = "#eae0e7"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_foreground"
+priority = 80
+set = "#e7b6f0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_background"
+priority = 80
+set = "#462151"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor"
+priority = 80
+set = "#e7b6f0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor_text_color"
+priority = 80
+set = "#161217"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color0"
+priority = 80
+set = "#161217"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color1"
+priority = 80
+set = "#ffb4ab"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color2"
+priority = 80
+set = "#e7b6f0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color3"
+priority = 80
+set = "#f5b7b2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color4"
+priority = 80
+set = "#fbd7ff"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color5"
+priority = 80
+set = "#f2dbf3"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color6"
+priority = 80
+set = "#d6c0d6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color7"
+priority = 80
+set = "#eae0e7"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color8"
+priority = 80
+set = "#3d373d"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color9"
+priority = 80
+set = "#ffb4ab"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color10"
+priority = 80
+set = "#e7b6f0"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color11"
+priority = 80
+set = "#f5b7b2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color12"
+priority = 80
+set = "#fbd7ff"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color13"
+priority = 80
+set = "#f2dbf3"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color14"
+priority = 80
+set = "#d6c0d6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color15"
+priority = 80
+set = "#eae0e7"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "JetBrains Mono Nerd Font"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = "13.0"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "cursor_shape"
+priority = 50
+set = "beam"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_margin_width"
+priority = 50
+set = "21.75"
+
+[[apps.rofi.ops]]
+fragment = "hypr-matugen-dark"
+priority = 70
+
+[assets.hypr-matugen-dark]
+digest = "sha256:7b00fb90fea73c23e34a570b5fbe5bbbdd5e37977988a2833a7b59a6d7562937"
+kind = "fragment"
+path = "rofi/themes/hypr-matugen-dark.rasi"
+size = 1872
+
+[assets.theme-hud]
+digest = "sha256:0166ce18f92c7d949c4988cada0fb6b69032babe5b4a1d8f0f6fc12d04efd31a"
+kind = "preview"
+path = "previews/rice-screenshots/theme-hud.jpg"
+size = 732329
+
+[assets.theme-terminal]
+digest = "sha256:706052e8e265ea04d9c81088c61219a3ac222448f18e3e7f9ba4521f5a6813a5"
+kind = "preview"
+path = "previews/rice-screenshots/theme-terminal.jpg"
+size = 624479
+
+[assets.theme-wasteland]
+digest = "sha256:5fe050f47c66eede8b2994e1a13753f1790f4541cf7431a931c63d71cdc7a6ec"
+kind = "preview"
+path = "previews/rice-screenshots/theme-wasteland.jpg"
+size = 412035

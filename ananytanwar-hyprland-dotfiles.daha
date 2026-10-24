@@ -1,0 +1,509 @@
+# Drafted by `daha-cli import` from https://github.com/AnanyTanwar/hyprland-dotfiles.git at 2938f2758dfccdcfa965474004cb8dc58bec816d.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 34 bind, 2 bindm, 3 exec-once, 3 general settings, 10 input settings, 6 layerrule, 1 misc settings, 2 monitor, 10 workspace (not theme: binds, startup commands, monitors, input and the like)
+#   left out: kitty: 6 other settings
+#   left out: waybar: its config (modules, layout) isn't imported: that's a desktop, not a theme
+#   left out: rofi: config/rofi/config.rasi names no theme file (@theme or @import): its settings aren't a theme
+#   left out: alacritty: its colours are in config/alacritty/alacritty.toml itself, and daha can't take single TOML settings yet (only theme files it imports)
+#   left out: btop: its theme current.theme isn't in their repository (btop's own themes aren't packed)
+#   left out: cava: 14 settings that aren't its theme
+#   left out: hyprlock: found config/hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+
+daha = 1
+
+[pack]
+authors = [ "AnanyTanwar" ]
+description = "Taken from AnanyTanwar/hyprland-dotfiles at 2938f2758dfc, referenced there and not copied: only what themes an app.\n\n- hyprland: config/hypr/hyprland.conf and 10 file(s) it sources: 27 settings\n- kitty: config/kitty/kitty.conf and 1 included file(s): 37 settings\n- waybar: config/waybar/style.css (the whole style)\n- cava: config/cava/config: 8 settings\n- swaync: config/swaync/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.ananytanwar-hyprland-dotfiles"
+license = "MIT"
+name = "AnanyTanwar's hyprland-dotfiles"
+preview = [ "tokyonight-main", "tokyo-dev", "cat-main" ]
+summary = "AnanyTanwar's rice: its look for hyprland, kitty, waybar, cava and swaync"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "2938f2758dfccdcfa965474004cb8dc58bec816d"
+ref = "main"
+repo = "https://github.com/AnanyTanwar/hyprland-dotfiles.git"
+
+[requires]
+fonts = [ "Agave Nerd Font Mono" ]
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient" ]
+priority = 80
+set = 1
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_count" ]
+priority = 80
+set = 6
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_1" ]
+priority = 80
+set = "'#c4a7e7'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_2" ]
+priority = 80
+set = "'#ebbcba'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_3" ]
+priority = 80
+set = "'#eb6f92'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_4" ]
+priority = 80
+set = "'#f6c177'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_5" ]
+priority = 80
+set = "'#f6c177'"
+
+[[apps.cava.ops]]
+group = "colors"
+key = [ "color", "gradient_color_6" ]
+priority = 80
+set = "'#9ccfd8'"
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_splash_rendering" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col.active_border" ]
+priority = 80
+set = "rgb(bd93f9)"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col.inactive_border" ]
+priority = 80
+set = "rgb(44475a)"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "decoration", "shadow", "color" ]
+priority = 80
+set = "rgba(bd93f944)"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "decoration", "shadow", "color_inactive" ]
+priority = 80
+set = "rgba(282a3644)"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 6
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 12
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 14
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding_power" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "range" ]
+priority = 50
+set = 30
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "render_power" ]
+priority = 50
+set = 3
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = "yes"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 6
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 2
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "vibrancy" ]
+priority = 50
+set = "0.5"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "contrast" ]
+priority = 50
+set = 1
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "brightness" ]
+priority = 50
+set = 1
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "ignore_opacity" ]
+priority = 50
+set = "on"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "new_optimizations" ]
+priority = 50
+set = "on"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "xray" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_inactive" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_strength" ]
+priority = 50
+set = "0.10"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_special" ]
+priority = 50
+set = "0.5"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "Agave Nerd Font Mono"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = 16
+
+[[apps.kitty.ops]]
+group = "window"
+key = "cursor_shape"
+priority = 50
+set = "block"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_padding_width"
+priority = 50
+set = 10
+
+[[apps.kitty.ops]]
+group = "window"
+key = "background_opacity"
+priority = 50
+set = "0.90"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "wayland_titlebar_color"
+priority = 80
+set = "system"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "foreground"
+priority = 80
+set = "#f8f8f2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "background"
+priority = 80
+set = "#282a36"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_foreground"
+priority = 80
+set = "#282a36"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "selection_background"
+priority = 80
+set = "#ff79c6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor"
+priority = 80
+set = "#ff79c6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "cursor_text_color"
+priority = 80
+set = "#282a36"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "url_color"
+priority = 80
+set = "#ff79c6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_border_color"
+priority = 80
+set = "#bd93f9"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_border_color"
+priority = 80
+set = "#6272a4"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "bell_border_color"
+priority = 80
+set = "#f1fa8c"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_tab_foreground"
+priority = 80
+set = "#282a36"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "active_tab_background"
+priority = 80
+set = "#bd93f9"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_tab_foreground"
+priority = 80
+set = "#f8f8f2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "inactive_tab_background"
+priority = 80
+set = "#282a36"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "tab_bar_background"
+priority = 80
+set = "#282a36"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color0"
+priority = 80
+set = "#44475a"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color8"
+priority = 80
+set = "#44475a"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color1"
+priority = 80
+set = "#ff5555"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color9"
+priority = 80
+set = "#ff5555"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color2"
+priority = 80
+set = "#50fa7b"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color10"
+priority = 80
+set = "#50fa7b"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color3"
+priority = 80
+set = "#f1fa8c"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color11"
+priority = 80
+set = "#f1fa8c"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color4"
+priority = 80
+set = "#8be9fd"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color12"
+priority = 80
+set = "#8be9fd"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color5"
+priority = 80
+set = "#ff79c6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color13"
+priority = 80
+set = "#ff79c6"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color6"
+priority = 80
+set = "#8be9fd"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color14"
+priority = 80
+set = "#8be9fd"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color7"
+priority = 80
+set = "#f8f8f2"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "color15"
+priority = 80
+set = "#6272a4"
+
+[[apps.swaync.ops]]
+fragment = "style-2"
+priority = 70
+target = "style"
+
+[[apps.waybar.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[assets.cat-main]
+digest = "sha256:d95ca63c10fd855ed0f597467832dd7f6b30c41a4dd9f6814fafeb779536b6ff"
+kind = "preview"
+path = "screenshots/catppuccin/cat_main.png"
+size = 725466
+
+[assets.style]
+digest = "sha256:95e074e0d2fa7b3a5b4a4e4c39d0bc2bdd1aa384d80064a1984488c389e8880b"
+kind = "fragment"
+path = "config/waybar/style.css"
+size = 3099
+
+[assets.style-2]
+digest = "sha256:e5891741de0dbc74440e808b7793df093950164a7cee5997c7c4b5670422a5b9"
+kind = "fragment"
+path = "config/swaync/style.css"
+size = 4720
+
+[assets.tokyo-dev]
+digest = "sha256:9fd3531a785cee68c6589bbec753ff895e6deebe469bc5912b2c33dec2d41674"
+kind = "preview"
+path = "screenshots/tokyo-night/tokyo_dev.png"
+size = 883336
+
+[assets.tokyonight-main]
+digest = "sha256:dfe4e6061a91b15633f86dbfd2121d26dcf51c20275fe110f620a9a206ef3fe7"
+kind = "preview"
+path = "screenshots/tokyo-night/tokyonight_main.png"
+size = 2970492

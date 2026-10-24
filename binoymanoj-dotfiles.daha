@@ -1,0 +1,336 @@
+# Drafted by `daha-cli import` from https://github.com/binoymanoj/dotfiles.git at e08e850305068ce4da3192dcbb5a64eb9035cece.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 1 dwindle settings, 5 general settings, 7 gestures settings, 11 input settings, 1 master settings, 1 misc settings, 1 xwayland settings, 4 hl.animation calls, 85 hl.bind calls, 4 hl.curve calls, 1 hl.device calls, 16 hl.env calls, 3 hl.gesture calls, 4 hl.monitor calls, 1 hl.on calls, 2 hl.window_rule calls (not theme, or animations, which aren't taken from Lua yet)
+#   left out: hyprland: 1 parts of its Lua need running to read (core.keybinds:116: a for block isn't read (it would need running))
+#   left out: kitty: 1 keyboard shortcuts, 2 other settings
+#   left out: waybar: its config (modules, layout) isn't imported: that's a desktop, not a theme
+#   left out: dunst: 28 settings that aren't its theme
+#   left out: fastfetch: found fastfetch/config.jsonc, but the importer doesn't read fastfetch yet
+#   left out: ghostty: found ghostty/config, but the importer doesn't read ghostty yet
+#   left out: hyprlock: found hypr/hyprlock.conf, but the importer doesn't read hyprlock yet
+#   left out: hyprpaper: found hypr/hyprpaper.conf, but the importer doesn't read hyprpaper yet
+
+daha = 1
+
+[pack]
+authors = [ "binoymanoj" ]
+description = "Taken from binoymanoj/dotfiles at e08e85030506, referenced there and not copied: only what themes an app.\n\n- hyprland: hypr/hyprland.lua and 10 module(s) it requires: 16 settings (read from its Lua, not run)\n- kitty: kitty/kitty.conf: 6 settings\n- waybar: waybar/style.css (the whole style)\n- rofi: rofi/themes/catppuccin.rasi (its theme)\n- dunst: dunst/dunstrc: 18 settings\n- swaync: swaync/style.css (the whole style)\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.binoymanoj-dotfiles"
+license = "MIT"
+name = "binoymanoj's dotfiles"
+preview = [ "desktop-overview", "control-center1", "control-center2" ]
+summary = "binoymanoj's rice: its look for hyprland, kitty, waybar, rofi, dunst and swaync"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "e08e850305068ce4da3192dcbb5a64eb9035cece"
+ref = "master"
+repo = "https://github.com/binoymanoj/dotfiles.git"
+
+[requires]
+fonts = [ "JetBrains Mono Nerd Font" ]
+
+[[apps.dunst.ops]]
+group = "font"
+key = [ "global", "font" ]
+priority = 60
+set = "\"JetBrainsMono Nerd Font 11\""
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "frame_width" ]
+priority = 50
+set = 2
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "frame_color" ]
+priority = 80
+set = "\"#9199CB\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "separator_color" ]
+priority = 80
+set = "frame"
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "corner_radius" ]
+priority = 50
+set = 12
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "transparency" ]
+priority = 50
+set = 0
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "background" ]
+priority = 80
+set = "\"#00000000\"  # Fully transparent"
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "foreground" ]
+priority = 80
+set = "\"#cdd6f4\""
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "gap_size" ]
+priority = 50
+set = 8
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "padding" ]
+priority = 50
+set = 12
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "horizontal_padding" ]
+priority = 50
+set = 12
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "text_icon_padding" ]
+priority = 80
+set = 8
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "background" ]
+priority = 80
+set = "\"#00000055\"  # Very slight dark tint for readability"
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_low", "frame_color" ]
+priority = 80
+set = "\"#89b4fa\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "background" ]
+priority = 80
+set = "\"#00000055\"  # Very slight dark tint for readability"
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_normal", "frame_color" ]
+priority = 80
+set = "\"#9199CB\""
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "background" ]
+priority = 80
+set = "\"#f38ba8aa\"  # Semi-transparent red"
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "urgency_critical", "frame_color" ]
+priority = 80
+set = "\"#f38ba8\""
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+
+    [apps.hyprland.ops.set]
+    bottom = 5
+    left = 5
+    right = 5
+    top = 3
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col", "active_border" ]
+priority = 80
+
+    [apps.hyprland.ops.set]
+    angle = 45
+    colors = [ "rgba(b4befecc)", "rgba(cdd6f4cc)" ]
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "general", "col", "inactive_border" ]
+priority = 80
+set = "rgba(595959aa)"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 8
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "active_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "inactive_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 5
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 2
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "vibrancy" ]
+priority = 50
+set = "0.1696"
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_splash_rendering" ]
+priority = 30
+set = true
+
+[[apps.kitty.ops]]
+group = "window"
+key = "hide_window_decorations"
+priority = 50
+set = "yes"
+
+[[apps.kitty.ops]]
+group = "colors"
+key = "background"
+priority = 80
+set = "#242933 # Nordic theme bg"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "cursor_shape"
+priority = 50
+set = "block"
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_size"
+priority = 60
+set = 10
+
+[[apps.kitty.ops]]
+group = "font"
+key = "font_family"
+priority = 60
+set = "JetBrains Mono Nerd Font"
+
+[[apps.kitty.ops]]
+group = "window"
+key = "window_padding_width"
+priority = 50
+set = "3 3"
+
+[[apps.rofi.ops]]
+fragment = "catppuccin"
+priority = 70
+
+[[apps.swaync.ops]]
+fragment = "style-2"
+priority = 70
+target = "style"
+
+[[apps.waybar.ops]]
+fragment = "style"
+priority = 70
+target = "style"
+
+[assets.catppuccin]
+digest = "sha256:622d8fa28dc2b91edf6098bbb7e4e6e8014e1c7247c319ed38f5a9ddc134ebcc"
+kind = "fragment"
+path = "rofi/themes/catppuccin.rasi"
+size = 1900
+
+[assets.control-center1]
+digest = "sha256:037c33f98c6ed2dc43b4d100faaf620bf2e07b9697e23d4cfe907966b83d463d"
+kind = "preview"
+path = "screenshots/control-center1.png"
+size = 1034289
+
+[assets.control-center2]
+digest = "sha256:f778aa0a23356fd9007de042f6bbe478f4d3b10b3ca834824185052ec2adf77e"
+kind = "preview"
+path = "screenshots/control-center2.png"
+size = 1037845
+
+[assets.desktop-overview]
+digest = "sha256:f7bdb9f857ea8d759ef04c3908416ddd2a7b297ffe1daef43be12c82a5b3bdfc"
+kind = "preview"
+path = "screenshots/desktop-overview.png"
+size = 2717491
+
+[assets.style]
+digest = "sha256:d06640801412226169505ee28a332f839a189dac44ad3540ed1311f088030fff"
+kind = "fragment"
+path = "waybar/style.css"
+size = 1904
+
+[assets.style-2]
+digest = "sha256:620e0bb3f6aedf86b0cac3d4360d3bfb933466254604dc1fc81c6ccbb191b573"
+kind = "fragment"
+path = "swaync/style.css"
+size = 2726

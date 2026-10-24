@@ -1,0 +1,262 @@
+# Drafted by `daha-cli import` from https://github.com/equisdots/hyprland.git at f665ee5f310ed3b65738fa162d1298487f67c9b4.
+# Their files stay in their repository: this pack points at them.
+# A draft: review every op before publishing.
+#   left out: hyprland: 3 binds settings, 2 cursor settings, 4 dwindle settings, 2 ecosystem settings, 8 general settings, 14 input settings, 2 master settings, 11 misc settings, 1 xwayland settings, 12 hl.animation calls, 104 hl.bind calls, 6 hl.curve calls, 26 hl.env calls, 1 hl.gesture calls, 1 hl.monitor calls, 1 hl.on calls, 44 hl.window_rule calls, 7 hl.workspace_rule calls (not theme, or animations, which aren't taken from Lua yet)
+#   left out: hyprland: 24 parts of its Lua need running to read (env:76: a if block isn't read (it would need running), ...)
+#   left out: dunst: 47 settings that aren't its theme
+
+daha = 1
+
+[pack]
+authors = [ "equisdots" ]
+description = "Taken from equisdots/hyprland at f665ee5f310e, referenced there and not copied: only what themes an app.\n\n- hyprland: config/hypr/hyprland.lua and 15 module(s) it requires: 32 settings (read from its Lua, not run)\n- dunst: config/dunst/dunstrc: 7 settings\n\nLeft out: binds, startup commands, monitors, scripts and anything outside their repository."
+desktops = [ "hyprland" ]
+id = "com.github.okdusty.equisdots-hyprland"
+license = "MIT"
+name = "equisdots's hyprland"
+summary = "equisdots's rice: its look for hyprland and dunst"
+version = "1.0.0"
+
+[source]
+publishers = [ "gitlab.com/okdusty" ]
+ref = "main"
+repo = "https://github.com/Okdusty/daha-collection.git"
+
+[upstream]
+commit = "f665ee5f310ed3b65738fa162d1298487f67c9b4"
+ref = "main"
+repo = "https://github.com/equisdots/hyprland.git"
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "padding" ]
+priority = 50
+set = 12
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "horizontal_padding" ]
+priority = 50
+set = 12
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "text_icon_padding" ]
+priority = 80
+set = 10
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "frame_width" ]
+priority = 50
+set = 1
+
+[[apps.dunst.ops]]
+group = "spacing"
+key = [ "global", "corner_radius" ]
+priority = 50
+set = 8
+
+[[apps.dunst.ops]]
+group = "colors"
+key = [ "global", "separator_color" ]
+priority = 80
+set = "frame"
+
+[[apps.dunst.ops]]
+group = "font"
+key = [ "global", "font" ]
+priority = 60
+set = "JetBrainsMono Nerd Font 10"
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_in" ]
+priority = 60
+set = 16
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "gaps_out" ]
+priority = 60
+set = 25
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "general", "border_size" ]
+priority = 60
+set = 2
+
+[[apps.hyprland.ops]]
+group = "layout"
+key = [ "decoration", "rounding" ]
+priority = 60
+set = 20
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "active_opacity" ]
+priority = 50
+set = "0.85"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "inactive_opacity" ]
+priority = 50
+set = "0.80"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "fullscreen_opacity" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_inactive" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "dim_strength" ]
+priority = 50
+set = "0.15"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "range" ]
+priority = 50
+set = 35
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "render_power" ]
+priority = 50
+set = 5
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "decoration", "shadow", "color" ]
+priority = 80
+set = "rgba(000000CC)"
+
+[[apps.hyprland.ops]]
+group = "colors"
+key = [ "decoration", "shadow", "color_inactive" ]
+priority = 80
+set = "rgba(00000088)"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "shadow", "offset" ]
+priority = 50
+set = [ 0, 10 ]
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "enabled" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "size" ]
+priority = 50
+set = 8
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "passes" ]
+priority = 50
+set = 3
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "new_optimizations" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "xray" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "ignore_opacity" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "noise" ]
+priority = 50
+set = "0.02"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "contrast" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "brightness" ]
+priority = 50
+set = "1.0"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "vibrancy" ]
+priority = 50
+set = "0.2"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "vibrancy_darkness" ]
+priority = 50
+set = "0.5"
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "special" ]
+priority = 50
+set = false
+
+[[apps.hyprland.ops]]
+group = "effects"
+key = [ "decoration", "blur", "popups" ]
+priority = 50
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_hyprland_logo" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "disable_splash_rendering" ]
+priority = 30
+set = true
+
+[[apps.hyprland.ops]]
+group = "misc"
+key = [ "misc", "force_default_wallpaper" ]
+priority = 30
+set = 0
+
+[[apps.hyprland.ops]]
+group = "animations"
+key = [ "animations", "enabled" ]
+priority = 40
+set = true
